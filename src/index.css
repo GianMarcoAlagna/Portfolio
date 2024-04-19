@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap");
+
+* {
+  box-sizing: border-box;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+:root {
+  --primary-color: #4182ff;
+  --primary-color-rgb: 65, 130, 255;
+  --secondary-color: #5542ff;
+  --secondary-color-rgb: 85, 66, 255;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --orange: #ff8401;
+  --light-blue: #00abff;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #6c757d;
+  --gray-dark-color: #343a40;
+  --text-color: #1e2023;
+  --bg-color: #f8f9fa;
+  --bg-color-rgb: 248, 249, 250;
+  --inverted-bg-color: #1e2023;
+  --inverted-bg-color-rgb: 30, 32, 35;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --border-radius: 0.25rem;
+  --transition: all 0.15s ease-in-out;
+}
+
+body:has(.navbar > .navbar__right > #color-mode > #color-mode-input:checked) {
+  --bg-color: #1b1b1b;
+  --bg-color-rgb: 27, 27, 27;
+  --inverted-bg-color: #f8f9fa;
+  --inverted-bg-color-rgb: 248, 249, 250;
+  --primary-color: #eea949;
+  --primary-color-rgb: 255, 132, 1;
+  --orange: #ff8401;
+  --light-blue: #00abff;
+  --secondary-color: #ff3984;
+  --secondary-color-rgb: 255, 57, 132;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #6c757d;
+  --gray-dark-color: #343a40;
+  --text-color: #f8f9fa;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --border-radius: 0.25rem;
+  --transition: all 0.15s ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
