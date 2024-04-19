@@ -15,6 +15,13 @@ export const Navbar = ({ lenis }) => {
     }
   });
 
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <nav className="navbar" style={{
       padding
@@ -23,7 +30,12 @@ export const Navbar = ({ lenis }) => {
         className='navbar__left'
       >
         <header className="navbar__header">
-          Gian-Marco Alagna
+          <span
+            className="navbar__header__text"
+            onClick={scrollToTop}
+          >
+            Gian-Marco Alagna
+          </span>
         </header>
       </div>
       <div

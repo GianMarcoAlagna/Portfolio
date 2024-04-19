@@ -1,8 +1,13 @@
-export default function Hive(p) {
-  const height = p.windowHeight;
-  const width = p.windowWidth;
+export default function Hive(p, winWidth, winHeight) {
+  let height = winHeight || p.windowHeight;
+  let width = winWidth || p.windowWidth;
   function setup() {
     p.createCanvas(width / 2, height);
+    window.addEventListener("resize", () => {
+      p.resizeCanvas(p.windowWidth / 2, p.windowHeight);
+      width = p.windowWidth;
+      height = p.windowHeight;
+    });
   }
 
   const shapeSize = 100;
@@ -15,7 +20,7 @@ export default function Hive(p) {
     p.stroke(255);
 
     let count = 0;
-    for (let j = -shapeSize; j < height; j += shapeSize / 2.3) {
+    for (let j = -shapeSize; j < height + shapeSize; j += shapeSize / 2.3) {
       for (let i = 0; i < width; i += shapeSize * 1.5) {
         // This can probably be simplified into one variable but I'm too lazy to change it so...
         const mouseDistX = Math.abs(p.mouseX - i) - shapeSize;

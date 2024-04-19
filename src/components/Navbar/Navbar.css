@@ -45,6 +45,18 @@
     background-color: rgba(var(--bg-color-rgb), 0.7);
     box-shadow: 0 0 0.5rem rgba(var(--inverted-bg-color-rgb), 0.5);
   }
+  .navbar__header__text {
+    background-image: linear-gradient(
+      45deg,
+      rgba(var(--primary-color-rgb), 1),
+      rgba(var(--secondary-color-rgb), 1)
+    );
+    background-size: 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    cursor: pointer;
+  }
 }
 
 .navbar__links {

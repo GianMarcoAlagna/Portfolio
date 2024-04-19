@@ -1,18 +1,41 @@
-export const Card = ({ Header, Body, Footer, Image }) => {
+import './Card.css';
+
+export const Card = ({ children }) => {
   return (
     <div className="card">
-      <div className="card__header">
-        {Header}
-      </div>
-      <div className="card__body">
-        {Body}
-      </div>
-      <div className="card__footer">
-        {Footer}
-      </div>
-      <div className="card__image">
-        {Image}
-      </div>
+      {children}
     </div>
   );
 }
+
+Card.Header = ({ children }) => {
+  return (
+    <div className="card__header">
+      {children}
+    </div>
+  );
+}
+
+Card.Image = ({ src, alt }) => {
+  return (
+    <img src={src} alt={alt} className="card__image" />
+  );
+}
+
+Card.Body = ({ children }) => {
+  return (
+    <div className="card__body">
+      {children}
+    </div>
+  );
+}
+
+Card.Footer = ({ children }) => {
+  return (
+    <div className="card__footer">
+      {children}
+    </div>
+  );
+}
+
+export default Card;

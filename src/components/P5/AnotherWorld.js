@@ -1,8 +1,13 @@
-export default function AnotherWorld(p) {
-  const height = p.windowHeight;
-  const width = p.windowWidth;
+export default function AnotherWorld(p, winWidth, winHeight) {
+  let height = winHeight || p.windowHeight;
+  let width = winWidth || p.windowWidth;
   function setup() {
     p.createCanvas(width / 2, height);
+    window.addEventListener("resize", () => {
+      p.resizeCanvas(p.windowWidth / 2, p.windowHeight);
+      height = p.windowHeight;
+      width = p.windowWidth;
+    });
   }
 
   const shapeSize = 100;
@@ -14,8 +19,8 @@ export default function AnotherWorld(p) {
     p.push();
     p.stroke(255);
 
-    for (let j = -shapeSize; j < p.height; j += shapeSize * 0.85) {
-      for (let i = -shapeSize; i <= p.width + 60; i += shapeSize * 0.75) {
+    for (let j = -shapeSize; j < p.height + shapeSize; j += shapeSize * 0.85) {
+      for (let i = -shapeSize; i <= p.width + shapeSize; i += shapeSize * 0.75) {
         // This can probably be simplified into one variable but I'm too lazy to change it so...
         const mouseDistX = Math.abs(p.mouseX - i) - shapeSize;
         const mouseDistY = Math.abs(p.mouseY - j) - shapeSize;
