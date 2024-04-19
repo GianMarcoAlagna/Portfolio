@@ -5,19 +5,6 @@ export const Main = () => {
   return (
     <main>
       <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
-      <Introduction />
     </main>
   );
 };

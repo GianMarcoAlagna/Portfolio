@@ -1,6 +1,7 @@
 import Lenis from '@studio-freight/lenis';
 import { Main, Navbar } from './components'
 import './App.css'
+import { MainProvider } from './context/MainContext';
 
 function App() {
   const lenis = new Lenis()
@@ -13,10 +14,12 @@ function App() {
 
   return (
     <>
-      <Navbar 
-        lenis={lenis}
-      />
-      <Main />
+      <MainProvider>
+        <Navbar
+          lenis={lenis}
+        />
+        <Main />
+      </MainProvider>
     </>
   )
 }
