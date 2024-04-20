@@ -10,9 +10,7 @@ export const Skills = () => {
       const images = [];
       for (const skill in SkillsList) {
         try {
-          const imagePath = '../../../' + SkillsList[skill];
-          const imgModule = await import(imagePath);
-          images.push({ skill, src: imgModule.default });
+          images.push({ skill, src: '../../../' + SkillsList[skill] });
         } catch (error) {
           console.error('Error loading image:', error);
         }
