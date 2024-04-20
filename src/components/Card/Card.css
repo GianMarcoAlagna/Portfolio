@@ -1,5 +1,6 @@
 .card {
   width: fit-content;
+  min-width: 20rem;
   height: fit-content;
   margin: 0.5rem auto;
   display: flex;

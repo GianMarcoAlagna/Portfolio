@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '../Card/Card';
 import SkillsList from '../Util/Skills.json';
+import { Carousel } from '../Carousel/Carousel';
 
 export const Skills = () => {
   const [loadedImages, setLoadedImages] = useState([]);
 
   useEffect(() => {
-    const importImages = async () => {
+    const createImages = async () => {
       const images = [];
       for (const skill in SkillsList) {
         try {
@@ -18,7 +19,7 @@ export const Skills = () => {
       setLoadedImages(images);
     };
 
-    importImages();
+    createImages();
   }, []);
 
   return (
@@ -27,13 +28,9 @@ export const Skills = () => {
         <h2 className="Header">Skills</h2>
       </Card.Header>
       <Card.Body>
-        <ul className='Grid__list'>
-          {loadedImages.map(({ skill, src }) => (
-            <li className="Grid__list-item" key={skill}>
-              <img src={src} alt={skill} />
-            </li>
-          ))}
-        </ul>
+        <Carousel
+          items={loadedImages}
+        />
       </Card.Body>
     </Card>
   );
