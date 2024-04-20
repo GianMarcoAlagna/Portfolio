@@ -10,7 +10,7 @@ export const Skills = () => {
       const images = [];
       for (const skill in SkillsList) {
         try {
-          const imagePath = '../../assets/' + SkillsList[skill];
+          const imagePath = '../../../public/' + SkillsList[skill];
           const imgModule = await import(imagePath);
           images.push({ skill, src: imgModule.default });
         } catch (error) {
