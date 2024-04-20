@@ -1,38 +1,38 @@
 import './Card.css';
 
-export const Card = ({ children }) => {
+export const Card = ({ children, className = "" }) => {
   return (
-    <div className="card">
+    <div className={className.length ? "card " + className || "" : "card"}>
       {children}
     </div>
   );
 }
 
-Card.Header = ({ children }) => {
+Card.Header = ({ children, className = "" }) => {
   return (
-    <div className="card__header">
+    <div className={className.length ? "card__header " + className : "card__header"}>
       {children}
     </div>
   );
 }
 
-Card.Image = ({ src, alt }) => {
+Card.Image = ({ src, alt, className = "" }) => {
   return (
-    <img src={src} alt={alt} className="card__image" />
+    <img src={src} alt={alt} className={className.length ? "card__image " + className : "card__image"} />
   );
 }
 
-Card.Body = ({ children }) => {
+Card.Body = ({ children, className = "" }) => {
   return (
-    <div className="card__body">
+    <div className={className.length ? "card__body " + className : "card__body"}>
       {children}
     </div>
   );
 }
 
-Card.Footer = ({ children }) => {
+Card.Footer = ({ children, className = "" }) => {
   return (
-    <div className="card__footer">
+    <div className={className.length ? "card__footer " + className : "card__footer"}>
       {children}
     </div>
   );

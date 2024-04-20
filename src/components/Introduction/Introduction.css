@@ -1,44 +1,48 @@
 .Introduction {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: fit-content;
   width: 100%;
   background-color: var(--bg-color);
-}
-
-.Introduction__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 1;
-  color: var(--text-color);
-  width: 100%;
-  height: 100%;
-  animation: reveal 1s ease;
-  position: relative;
   &::after {
     content: "";
     position: absolute;
-    top: 0;
     left: 0;
-    width: 4px;
-    height: 100%;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
     background: linear-gradient(
         0deg,
         rgba(var(--primary-color-rgb), 1),
         rgba(var(--secondary-color-rgb), 1)
       )
-      center / 100% 0% no-repeat;
-    z-index: -1;
-    animation: bg-size 1s ease both;
+      center / 100% 100% no-repeat;
+    z-index: 1;
   }
+}
+
+.Introduction__content {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  color: var(--text-color);
+  width: 100%;
+  height: fit-content;
+  animation: reveal 1s ease;
+  position: relative;
   .Introduction__header {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 0rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: fit-content;
     animation: reveal 1s ease;
+    background-color: var(--bg-color-darkened);
   }
+
   .Introduction__paragraph {
     font-size: 1.5rem;
     font-weight: 500;
@@ -48,38 +52,53 @@
     animation-delay: 1s;
   }
 
-  .Introduction__email {
-    display: inline;
+  .Introduction__link {
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
     color: var(--text-color);
   }
 }
 
-#p5-container {
-  position: relative;
+.p5Canvas {
+  position: absolute;
   left: 0;
+  top: 0;
+  max-height: 100%;
+}
+
+.header {
+  position: relative;
   z-index: 0;
-  .p5-container__header {
-    margin: 0;
-    padding-top: 1rem;
-    position: absolute;
-    font-size: 2rem;
+  width: 100%;
+}
+
+.header__text {
+  margin: 0;
+  padding-top: 1rem;
+  position: relative;
+  font-size: 2rem;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgb(var(--bg-color-rgb), 0.5);
+  animation: reveal-down 1s ease;
+  z-index: 999;
+  &::after {
+    content: "";
+    display: block;
     width: 100%;
-    background-color: rgb(var(--bg-color-rgb), 0.5);
-    backdrop-filter: blur(10px);
-    animation: reveal-down 1s ease;
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 4px;
-      background-image: linear-gradient(
-        45deg,
-        rgba(var(--primary-color-rgb), 1),
-        rgba(var(--secondary-color-rgb), 1)
-      );
-      background-size: 100%;
-    }
+    height: 4px;
+    background-image: linear-gradient(
+      45deg,
+      rgba(var(--primary-color-rgb), 1),
+      rgba(var(--secondary-color-rgb), 1)
+    );
+    background-size: 100%;
   }
+}
+
+.header__info {
+  display: flex;
 }
 
 @keyframes bg-size {
@@ -88,19 +107,5 @@
   }
   100% {
     background-size: 100% 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .Introduction {
-    height: 100vh;
-  }
-  .Introduction__content {
-    .Introduction__header {
-      font-size: 2rem;
-    }
-    .Introduction__paragraph {
-      font-size: 1.25rem;
-    }
   }
 }

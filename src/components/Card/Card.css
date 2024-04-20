@@ -1,11 +1,12 @@
 .card {
   width: fit-content;
-  margin: 0 auto;
+  height: fit-content;
+  margin: 0.5rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #00000028;
+  background-color: var(--bg-color-darkened);
   border-radius: 0.5rem;
   box-shadow: -0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.75);
   .card__header {

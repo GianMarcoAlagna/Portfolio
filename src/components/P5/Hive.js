@@ -1,12 +1,12 @@
-export default function Hive(p, winWidth, winHeight) {
-  let height = winHeight || p.windowHeight;
-  let width = winWidth || p.windowWidth;
+export default function Hive(p, parentRef, color_mode) {
+  let height = parentRef.clientHeight || p.windowHeight;
+  let width = parentRef.clientWidth || p.windowWidth;
   function setup() {
-    p.createCanvas(width / 2, height);
+    p.createCanvas(width, height);
     window.addEventListener("resize", () => {
-      p.resizeCanvas(p.windowWidth / 2, p.windowHeight);
-      width = p.windowWidth;
-      height = p.windowHeight;
+      height = parentRef.clientHeight || p.windowHeight;
+      width = parentRef.clientWidth || p.windowWidth;
+      p.resizeCanvas(width, height);
     });
   }
 
@@ -15,7 +15,6 @@ export default function Hive(p, winWidth, winHeight) {
 
   function draw() {
     p.background(220);
-
     p.push();
     p.stroke(255);
 
@@ -28,7 +27,10 @@ export default function Hive(p, winWidth, winHeight) {
         const mouseDist = mouseDistX + mouseDistY;
 
         p.push();
-        const color = [168 + mouseDist / 10, 50 + mouseDist / 10, 50];
+        const color =
+          color_mode === "dark"
+            ? [168 + mouseDist / 10, 50 + mouseDist / 10, 50]
+            : [50, 50 + mouseDist / 10, 168 + mouseDist / 10];
         p.fill(...color);
 
         shape(
