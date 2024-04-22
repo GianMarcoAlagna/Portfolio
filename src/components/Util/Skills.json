@@ -1,11 +1,12 @@
-[
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "PostgreSQL",
-  "Docker"
-]
+{
+  "HTML": "html.svg",
+  "CSS": "css.svg",
+  "JavaScript": "javascript.svg",
+  "React": "react.svg",
+  "Node.js": "node-js.svg",
+  "Express": "express-js.svg",
+  "MongoDB": "mongodb.svg",
+  "PostgreSQL": "postgresql.svg",
+  "Docker": "docker.svg",
+  "TypeScript": "typescript.svg"
+}

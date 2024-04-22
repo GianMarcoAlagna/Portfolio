@@ -1,19 +1,24 @@
 .card {
   width: fit-content;
-  margin: 0 auto;
+  min-width: 20rem;
+  height: fit-content;
+  margin: 0.5rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #00000028;
+  background-color: var(--bg-color-darkened);
   border-radius: 0.5rem;
   box-shadow: -0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  max-width: 100%;
   .card__header {
     text-align: center;
-    padding: 0rem;
     margin: 0rem;
     width: 100%;
     font-size: 2rem;
+    position: relative;
+    padding: 1rem;
     &::after {
       content: "";
       display: block;
@@ -25,6 +30,8 @@
         rgba(var(--secondary-color-rgb), 1)
       );
       background-size: 100%;
+      position: absolute;
+      left: 0;
     }
   }
 

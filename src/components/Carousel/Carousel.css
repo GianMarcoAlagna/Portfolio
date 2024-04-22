@@ -1,0 +1,75 @@
+.Carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(144px * 6 + 48px * 2);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(var(--secondary-color-rgb), 0.5);
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    left: 0;
+    backdrop-filter: blur(24px);
+    background-image: linear-gradient(
+      45deg,
+      rgba(var(--primary-color-rgb), 0.5),
+      rgba(var(--secondary-color-rgb), 0.5)
+    );
+    box-shadow: 0 0 24px rgba(var(--secondary-color-rgb), 0.5);
+    z-index: 10;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    right: 0;
+    backdrop-filter: blur(24px);
+    background-image: linear-gradient(
+      45deg,
+      rgba(var(--primary-color-rgb), 0.5),
+      rgba(var(--secondary-color-rgb), 0.5)
+    );
+    box-shadow: 0 0 24px rgba(var(--secondary-color-rgb), 0.5);
+    z-index: 10;
+  }
+  .Carousel__item {
+    width: 144px;
+    height: 144px;
+    display: inline-block;
+    margin: 0 24px;
+    transition: transform 0.5s;
+    &:hover {
+      filter: drop-shadow(0 0 12px rgba(var(--primary-color-rgb), 1));
+      transform: scale(1.1) translateY(-5%);
+    }
+  }
+  .Carousel__slider {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    animation: slide 10s linear infinite;
+    padding: 12px 0;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

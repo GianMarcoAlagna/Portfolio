@@ -1,38 +1,41 @@
+import { Reveal } from '../Reveal/Reveal';
 import './Card.css';
 
-export const Card = ({ children }) => {
+export const Card = ({ children, className = "" }) => {
   return (
-    <div className="card">
+    <Reveal>
+      <div className={className.length ? "card " + className || "" : "card"}>
+        {children}
+      </div>
+    </Reveal>
+  );
+}
+
+Card.Header = ({ children, className = "" }) => {
+  return (
+    <div className={className.length ? "card__header " + className : "card__header"}>
       {children}
     </div>
   );
 }
 
-Card.Header = ({ children }) => {
+Card.Image = ({ src, alt, className = "" }) => {
   return (
-    <div className="card__header">
+    <img src={src} alt={alt} className={className.length ? "card__image " + className : "card__image"} />
+  );
+}
+
+Card.Body = ({ children, className = "" }) => {
+  return (
+    <div className={className.length ? "card__body " + className : "card__body"}>
       {children}
     </div>
   );
 }
 
-Card.Image = ({ src, alt }) => {
+Card.Footer = ({ children, className = "" }) => {
   return (
-    <img src={src} alt={alt} className="card__image" />
-  );
-}
-
-Card.Body = ({ children }) => {
-  return (
-    <div className="card__body">
-      {children}
-    </div>
-  );
-}
-
-Card.Footer = ({ children }) => {
-  return (
-    <div className="card__footer">
+    <div className={className.length ? "card__footer " + className : "card__footer"}>
       {children}
     </div>
   );

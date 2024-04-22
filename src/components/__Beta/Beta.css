@@ -1,0 +1,42 @@
+.Beta-Tag {
+  position: fixed;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  z-index: 1000;
+  opacity: 0.8;
+  box-shadow: 1px 1px 20px rgba(var(--primary-color-rgb));
+  .Beta-Tag__text {
+    color: var(--white-color);
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+    text-shadow: 1px 1px 1px var(--dark-color);
+    pointer-events: none;
+  }
+}
+
+.Working-On {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: auto;
+  pointer-events: all;
+  max-height: 20ch;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      45deg,
+      rgba(var(--primary-color-rgb), 1),
+      rgba(var(--secondary-color-rgb), 1)
+    );
+  }
+  .Working-On__text {
+    color: var(--white-color);
+    padding: 0.1rem 1rem;
+    text-shadow: 1px 1px 5px var(--dark-color);
+  }
+}
