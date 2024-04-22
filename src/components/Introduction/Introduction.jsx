@@ -9,7 +9,7 @@ import './Introduction.css';
 export const Introduction = () => {
   const p5Container = useRef(null);
   const introductionRef = useRef(null);
-  const { color_mode } = useMainContext();
+  const { color_mode, screen } = useMainContext();
 
   useEffect(() => {
     const sketch = new p5((p) => Hive(p, introductionRef.current, color_mode), p5Container.current);

@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ColorMode } from './ColorMode';
+import { useMainContext } from '../../context/MainContext';
 import Links from '../Util/Links.json';
 import './Navbar.css';
 
@@ -9,6 +10,7 @@ export const Navbar = ({ lenis }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
   const links = Object.entries(Links);
+  const { screen } = useMainContext();
 
   lenis.on('scroll', () => {
     switch (window.scrollY) {
@@ -28,18 +30,7 @@ export const Navbar = ({ lenis }) => {
   }
 
   function toggleDrawer() {
-    if (drawerOpen) {
-      console.log('closing');
-      drawerRef.current.classList.add('closing');
-      drawerRef.current.classList.remove('open');
-      setTimeout(() => {
-        drawerRef.current.classList.remove('closing');
-        setDrawerOpen(false);
-      }, 450);
-    } else {
-      drawerRef.current.classList.add('open');
-      setDrawerOpen(true);
-    }
+    setDrawerOpen(!drawerOpen);
   }
 
   return (
@@ -71,7 +62,7 @@ export const Navbar = ({ lenis }) => {
             className="navbar__header__text"
             onClick={scrollToTop}
           >
-            Gian-Marco Alagna
+            {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
           </span>
         </header>
         <NavLinks links={links} />
@@ -81,9 +72,9 @@ export const Navbar = ({ lenis }) => {
       >
         <ColorMode />
       </div>
-      <div className="navbar__drawer" ref={drawerRef}>
+      <div className={`navbar__drawer${drawerOpen ? " open" : ""}`} ref={drawerRef}>
         <RxHamburgerMenu
-          className={drawerOpen ? "navbar__hamburger visible" : "navbar__hamburger"}
+          className={"navbar__hamburger"}
           onClick={toggleDrawer}
         />
         {links.map(link => (

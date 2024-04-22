@@ -19,8 +19,8 @@ export default function Hive(p, parentRef, color_mode) {
     p.stroke(255);
 
     let count = 0;
-    for (let j = -shapeSize; j < height + shapeSize; j += shapeSize / 2.3) {
-      for (let i = 0; i < width; i += shapeSize * 1.5) {
+    for (let j = -shapeSize; j < height; j += shapeSize / 2.3) {
+      for (let i = 0; i < width + shapeSize; i += shapeSize * 1.5) {
         // This can probably be simplified into one variable but I'm too lazy to change it so...
         const mouseDistX = Math.abs(p.mouseX - i) - shapeSize;
         const mouseDistY = Math.abs(p.mouseY - j) - shapeSize;

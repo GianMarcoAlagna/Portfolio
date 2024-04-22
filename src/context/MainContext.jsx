@@ -2,7 +2,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 
 export const MainContext = createContext({
   color_mode: "light",
-  setColorMode: () => {},
+  setColorMode: () => { },
   screen: {
     width: window.innerWidth,
     height: window.innerHeight
