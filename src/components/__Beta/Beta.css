@@ -1,0 +1,44 @@
+.Beta-Tag {
+  position: absolute;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  z-index: 1000;
+  opacity: 0.8;
+  box-shadow: 1px 1px 20px rgba(var(--primary-color-rgb));
+  &:hover > .Working-On,
+  &:active > .Working-On {
+    display: flex;
+  }
+  .Beta-Tag__text {
+    color: var(--white-color);
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+    text-shadow: 1px 1px 1px var(--dark-color);
+    pointer-events: none;
+  }
+}
+
+.Working-On {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--primary-color-rgb), 1),
+    rgba(var(--secondary-color-rgb), 1)
+  );
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 1px 1px 20px rgba(var(--secondary-color-rgb));
+  left: 5rem;
+  top: -18em;
+  overflow-y: auto;
+  transition: opacity 0.5s;
+  animation: reveal 0.5s;
+  .Working-On__text {
+    color: var(--white-color);
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+    text-shadow: 1px 1px 5px var(--dark-color);
+  }
+}

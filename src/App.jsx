@@ -2,6 +2,7 @@ import Lenis from '@studio-freight/lenis';
 import { Main, Navbar } from './components'
 import './App.css'
 import { MainProvider } from './context/MainContext';
+import { Beta } from './components/__Beta/Beta';
 
 function App() {
   const lenis = new Lenis()
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+      <Beta position={{ bottom: '1rem', left: '1rem' }} />
       <MainProvider>
         <Navbar
           lenis={lenis}
