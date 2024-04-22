@@ -6,6 +6,12 @@ main {
   min-height: 100vh;
 }
 
+.Main__section {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 100%
+}
+
 @media screen and (max-width: 768px) {
   main {
     display: flex;
