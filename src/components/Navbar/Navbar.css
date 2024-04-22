@@ -36,15 +36,19 @@
 }
 
 .navbar__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Satisfy", cursive;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   border: 1px solid rgba(var(--bg-color-rgb), 0.5);
   padding: 0.2rem;
   border-radius: 1rem;
   background-color: rgba(var(--bg-color-rgb), 0.5);
-  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
-    font-size 0.5s ease-in-out;
+  min-height: 3rem;
+  min-width: 8rem;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   &:hover {
     background-color: rgba(var(--bg-color-rgb), 0.7);
     box-shadow: 0 0 0.5rem rgba(var(--inverted-bg-color-rgb), 0.5);
