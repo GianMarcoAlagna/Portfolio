@@ -8,6 +8,7 @@ export const Navbar = ({ lenis }) => {
   const [padding, setPadding] = useState('1.5rem 0.5rem')
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
+  const links = Object.entries(Links);
 
   lenis.on('scroll', () => {
     switch (window.scrollY) {
@@ -73,7 +74,7 @@ export const Navbar = ({ lenis }) => {
             Gian-Marco Alagna
           </span>
         </header>
-        <NavLinks />
+        <NavLinks links={links} />
       </div>
       <div
         className="navbar__right"
@@ -85,7 +86,7 @@ export const Navbar = ({ lenis }) => {
           className={drawerOpen ? "navbar__hamburger visible" : "navbar__hamburger"}
           onClick={toggleDrawer}
         />
-        {Object.entries(Links).map(link => (
+        {links.map(link => (
           <a
             href={link[1]}
             key={link[1]}
@@ -99,29 +100,31 @@ export const Navbar = ({ lenis }) => {
   )
 }
 
-const NavLinks = () => {
-  const links = [];
-  for (let link in Links) {
-    links.push(
+const NavLinks = ({ links }) => {
+  const linksMap = links.map(([link, url], index) => {
+    return (
       <NavLink
         link={link}
-        key={link}
+        url={url}
+        key={url}
+        leftEdge={index === 0}
+        rightEdge={index === links.length - 1}
       />
     )
-  }
+  });
   return (
     <div className="navbar__links">
-      {links}
+      {linksMap}
     </div>
   )
 }
 
-const NavLink = ({ link }) => {
+const NavLink = ({ link, url, leftEdge, rightEdge }) => {
   return (
     <a
-      href={Links[link]}
+      href={url}
       key={link}
-      className="navbar__link"
+      className={leftEdge ? "navbar__link left-edge" : rightEdge ? "navbar__link right-edge" : "navbar__link"}
     >
       {link}
     </a>

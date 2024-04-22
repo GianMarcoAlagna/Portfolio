@@ -11,6 +11,33 @@
   display: block;
 }
 
+.Flex-Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Flex-Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Flex-Column-Center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Flex-Row-Center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+section {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
   color: inherit;

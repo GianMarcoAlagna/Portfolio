@@ -49,13 +49,13 @@
     animation: reveal 1s ease both;
     animation-delay: 1s;
   }
+}
 
-  .Introduction__link {
-    display: flex;
-    gap: 0.1rem;
-    align-items: center;
-    color: var(--text-color);
-  }
+.Introduction__link {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  color: var(--text-color);
 }
 
 .p5Canvas {

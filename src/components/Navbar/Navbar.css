@@ -66,11 +66,13 @@
 .navbar__links {
   display: flex;
   border-radius: 1rem;
-  overflow: hidden;
   font-size: 1.5rem;
   background-color: rgba(var(--bg-color-rgb), 0.25);
   transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   gap: 0.1rem;
+  width: fit-content;
+  padding: 0.5rem;
+  border: 2px solid rgba(var(--inverted-bg-color-rgb), 0.5);
   &:hover {
     box-shadow: 0 0 0.5rem rgba(var(--inverted-bg-color-rgb), 0.5);
   }
@@ -78,14 +80,26 @@
     position: relative;
     color: var(--text-color);
     background-color: rgba(var(--bg-color-rgb), 0.5);
-    /* min-width: 10rem; */
-    width: 100%;
     text-decoration: none;
-    padding: 0.5rem 2rem;
+    width: 100%;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
       transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out,
       font-size 0.5s ease-in-out;
     overflow: hidden;
+    display: flex;
+    min-width: 8rem;
+    min-height: 3rem;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    &.left-edge {
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+    &.right-edge {
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
     &::after {
       content: "";
       position: absolute;

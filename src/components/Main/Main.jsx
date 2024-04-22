@@ -1,6 +1,7 @@
 import { Introduction } from "../Introduction/Introduction";
 import { About } from "../About/About";
 import { Skills } from "../Skills/Skills";
+import { Other } from "../Other/Other";
 import "./Main.css";
 
 export const Main = () => {
@@ -11,6 +12,7 @@ export const Main = () => {
         <article className="Main__article">
           <About />
           <Skills />
+          <Other />
         </article>
       </section>
     </main>

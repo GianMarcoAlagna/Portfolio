@@ -1,7 +1,9 @@
 import Card from "../Card/Card";
 import { RiFileList3Fill } from "react-icons/ri";
+import Links from "../Util/Links.json";
 
 export const Resume = () => {
+  console.log(Links)
   return (
     <Card>
       <Card.Header>
@@ -10,7 +12,7 @@ export const Resume = () => {
       <Card.Body>
         <a
           className="Introduction__link"
-          href={Links.resume}
+          href={Links.Resume}
           target="_blank"
           rel="noreferrer"
         >
