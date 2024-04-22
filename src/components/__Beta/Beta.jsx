@@ -27,7 +27,7 @@ export const Beta = ({ position }) => {
       <div className="Beta-Tag" style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <h1 className="Beta-Tag__text">Beta</h1>
         {showTickets && (
-          <div className="Working-On">
+          <div className="Working-On" data-lenis-prevent>
             <Reveal>
               <h2 className="Working-On__text"> Currently Working On</h2>
               {tickets}
