@@ -11,6 +11,7 @@
   border-radius: 0.5rem;
   box-shadow: -0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.75);
   overflow: hidden;
+  max-width: 100%;
   .card__header {
     text-align: center;
     margin: 0rem;
