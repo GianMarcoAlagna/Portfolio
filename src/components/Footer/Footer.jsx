@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <Reveal>
       <footer className="Footer  Flex-Row-Center">
-        <footer className="Footer__content Flex-Row-Center Gap">
+        <footer className="Footer__content">
           <Resume />
           <Contact />
         </footer>
