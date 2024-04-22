@@ -5,10 +5,6 @@
   z-index: 1000;
   opacity: 0.8;
   box-shadow: 1px 1px 20px rgba(var(--primary-color-rgb));
-  &:hover > .Working-On,
-  &:active > .Working-On {
-    display: flex;
-  }
   .Beta-Tag__text {
     color: var(--white-color);
     font-size: 1rem;
@@ -20,7 +16,7 @@
 
 .Working-On {
   position: absolute;
-  display: none;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(
     45deg,
@@ -33,11 +29,9 @@
   left: 5rem;
   top: -18em;
   overflow-y: auto;
-  transition: opacity 0.5s;
-  animation: reveal 0.5s;
+  animation: opacity 1s ease-in-out;
   .Working-On__text {
     color: var(--white-color);
-    font-size: 1rem;
     padding: 0.1rem 1rem;
     text-shadow: 1px 1px 5px var(--dark-color);
   }

@@ -1,10 +1,13 @@
+import { Reveal } from '../Reveal/Reveal';
 import './Card.css';
 
 export const Card = ({ children, className = "" }) => {
   return (
-    <div className={className.length ? "card " + className || "" : "card"}>
-      {children}
-    </div>
+    <Reveal>
+      <div className={className.length ? "card " + className || "" : "card"}>
+        {children}
+      </div>
+    </Reveal>
   );
 }
 

@@ -1,7 +1,10 @@
+import { useState } from "react";
+import { Reveal } from "../Reveal/Reveal";
 import Tickets from "../Util/Tickets";
 import "./Beta.css";
 
 export const Beta = ({ position }) => {
+  const [showTickets, setShowTickets] = useState(false);
   const style = {
     top: position.top,
     left: position.left,
@@ -15,14 +18,22 @@ export const Beta = ({ position }) => {
       </div>
     );
   });
+
+  const onMouseEnter = () => setShowTickets(true);
+  const onMouseLeave = () => setShowTickets(false);
+
   return (
     <>
-      <div className="Beta-Tag" style={style}>
+      <div className="Beta-Tag" style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <h1 className="Beta-Tag__text">Beta</h1>
-        <div className="Working-On">
-          <h2 className="Working-On__text"> Currently Working On</h2>
-          {tickets}
-        </div>
+        {showTickets && (
+          <div className="Working-On">
+            <Reveal>
+              <h2 className="Working-On__text"> Currently Working On</h2>
+              {tickets}
+            </Reveal>
+          </div>
+        )}
       </div>
     </>
   );

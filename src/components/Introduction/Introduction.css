@@ -30,14 +30,13 @@
   color: var(--text-color);
   width: 100%;
   height: fit-content;
-  animation: reveal 1s ease;
   position: relative;
+  justify-content: center;
   .Introduction__header {
     font-size: 2.5rem;
     font-weight: 700;
     border-radius: 1rem;
     width: fit-content;
-    animation: reveal 1s ease;
     background-color: var(--bg-color-darkened);
   }
 
@@ -46,7 +45,6 @@
     font-weight: 500;
     margin: 0rem;
     position: inherit;
-    animation: reveal 1s ease both;
     animation-delay: 1s;
   }
 }

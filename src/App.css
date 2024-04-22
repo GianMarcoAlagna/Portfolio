@@ -92,6 +92,24 @@ html.lenis body {
   }
 }
 
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  animation: reveal 1s ease-in-out;
+  &.hidden {
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: none;
+  }
+}
+
 .Flex-Grid {
   display: flex;
   flex-wrap: wrap;
