@@ -6,10 +6,15 @@
   flex-direction: column;
   background-color: var(--bg-color-darkened);
   border-radius: 0.5rem;
-  box-shadow: -0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.75);
+  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
   overflow: hidden;
   max-width: 100%;
   position: relative;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
+    transform: translate(0.15rem, -0.15rem);
+  }
   .card__header {
     text-align: center;
     margin: 0rem;
