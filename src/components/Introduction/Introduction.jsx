@@ -9,7 +9,7 @@ import './Introduction.css';
 export const Introduction = () => {
   const p5Container = useRef(null);
   const introductionRef = useRef(null);
-  const { color_mode, screen } = useMainContext();
+  const { color_mode } = useMainContext();
 
   useEffect(() => {
     const sketch = new p5((p) => Hive(p, introductionRef.current, color_mode), p5Container.current);
@@ -19,12 +19,12 @@ export const Introduction = () => {
   }, [color_mode]);
 
   return (
-    <div className="Introduction" id="home" ref={introductionRef}>
+    <div className="Introduction border-after" id="home" ref={introductionRef}>
       <div
         className="header"
         ref={p5Container}
       >
-        <p className="header__text">
+        <p className="header__text border-after">
           Hey, thanks for checking out my portfolio!
         </p>
         <div className="Introduction__content">

@@ -13,7 +13,7 @@ export const Card = ({ children, className = "" }) => {
 
 Card.Header = ({ children, className = "" }) => {
   return (
-    <div className={className.length ? "card__header " + className : "card__header"}>
+    <div className={className.length ? "card__header border-after" + className : "card__header border-after"}>
       {children}
     </div>
   );

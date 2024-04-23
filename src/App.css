@@ -1,9 +1,4 @@
-#root {
-  margin: 0 auto;
-  text-align: center;
-}
-
-html.lenis body {
+html, html.lenis body {
   height: auto;
 }
 
@@ -23,13 +18,13 @@ html.lenis body {
   pointer-events: none;
 }
 
-.Grid__list {
+.grid__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
   padding: 1rem;
   width: 100%;
-  .Grid__list-item {
+  .grid__list-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +47,7 @@ html.lenis body {
       );
       background-size: 100%;
     }
-    .Grid__list__item__body {
+    .grid__list__item__body {
       display: flex;
       font-size: 1.2rem;
       justify-content: center;
@@ -65,7 +60,18 @@ html.lenis body {
   }
 }
 
-.Header {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  grid-template-rows: auto;
+  width: 100%;
+  .grid__item {
+    width: 100%;
+  }
+}
+
+.header {
   margin: 0;
   padding: 0;
 }
@@ -108,10 +114,4 @@ html.lenis body {
     transform: translateY(1rem);
     animation: none;
   }
-}
-
-.Flex-Grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 }

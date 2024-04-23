@@ -3,8 +3,6 @@
 * {
   box-sizing: border-box;
   transition: background-color 0.25s ease-in-out;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 .visible {
@@ -40,8 +38,6 @@
 
 section {
   padding: 1rem;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 a {
@@ -168,4 +164,44 @@ body {
   color: var(--text-color);
   position: relative;
   min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  overflow: visible;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+}
+
+.border-before::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--primary-color-rgb), 1),
+    rgba(var(--secondary-color-rgb), 1)
+  );
+}
+
+.border-after::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--primary-color-rgb), 1),
+    rgba(var(--secondary-color-rgb), 1)
+  );
 }

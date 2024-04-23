@@ -6,12 +6,12 @@ export const Carousel = ({ items }) => {
       <img
         src={item.src}
         alt={item.skill}
-        className="Carousel__image"
+        className="carousel__image"
       />
     </Carousel.Item>
   ));
   return (
-    <div className="Carousel">
+    <div className="carousel">
       <Carousel.Slider>
         {carouselItems}
         {carouselItems}
@@ -22,7 +22,7 @@ export const Carousel = ({ items }) => {
 
 Carousel.Header = ({ children }) => {
   return (
-    <div className="Carousel__header">
+    <div className="carousel__header">
       {children}
     </div>
   );
@@ -30,7 +30,7 @@ Carousel.Header = ({ children }) => {
 
 Carousel.Slider = ({ children }) => {
   return (
-    <div className="Carousel__slider">
+    <div className="carousel__slider">
       {children}
     </div>
   );
@@ -38,7 +38,7 @@ Carousel.Slider = ({ children }) => {
 
 Carousel.Item = ({ children }) => {
   return (
-    <div className="Carousel__item">
+    <div className="carousel__item">
       {children}
     </div>
   );

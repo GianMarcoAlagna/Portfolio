@@ -3,14 +3,13 @@
   top: 0px;
   z-index: 100;
   background-color: #0000005b;
-  padding: 1.5rem 0;
-  font-size: 1.2rem;
   transition: padding 0.5s ease-in-out;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 .navbar__left,
@@ -160,6 +159,13 @@
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   align-items: center;
+  .navbar__hamburger {
+    display: block;
+    &:hover,
+    &:active {
+      transform: scale(1.5);
+    }
+  }
   &.open {
     transform: translateX(0);
   }

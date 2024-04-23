@@ -5,13 +5,13 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <Reveal>
-      <footer className="Footer  Flex-Row-Center">
-        <footer className="Footer__content">
+    <footer className="footer border-before">
+      <Reveal>
+        <footer className="footer__content">
           <Resume />
           <Contact />
         </footer>
-      </footer>
-    </Reveal>
+      </Reveal>
+    </footer>
   );
 }

@@ -1,4 +1,4 @@
-.Carousel {
+.carousel {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@
     box-shadow: 0 0 24px rgba(var(--secondary-color-rgb), 0.5);
     z-index: 10;
   }
-  .Carousel__item {
+  .carousel__item {
     width: 144px;
     height: 144px;
     display: inline-block;
@@ -54,7 +54,7 @@
       transform: scale(1.1) translateY(-5%);
     }
   }
-  .Carousel__slider {
+  .carousel__slider {
     display: inline-block;
     white-space: nowrap;
     width: 100%;

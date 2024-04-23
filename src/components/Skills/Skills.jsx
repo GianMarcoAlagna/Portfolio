@@ -25,7 +25,7 @@ export const Skills = () => {
   return (
     <Card>
       <Card.Header>
-        <h2 className="Header">Tech Proficiency</h2>
+        <h2 className="header">Tech Proficiency</h2>
       </Card.Header>
       <Card.Body>
         <Carousel

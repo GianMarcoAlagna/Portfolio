@@ -33,10 +33,14 @@ export const Navbar = ({ lenis }) => {
     setDrawerOpen(!drawerOpen);
   }
 
-  return (
-    <nav className="navbar" style={{
+  const style = useMemo(() => {
+    return {
       padding
-    }}>
+    }
+  }, [padding]);
+
+  return (
+    <nav className="navbar border-after" style={style}>
       <div
         className='navbar__left'
       >

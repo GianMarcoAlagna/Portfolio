@@ -6,10 +6,21 @@ main {
   min-height: 100vh;
 }
 
-.Main__section {
+.main__section {
   padding: 1rem;
-  margin: 0 auto;
-  max-width: 100%
+  max-width: 100%;
+  .main__article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+
+.full {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {
