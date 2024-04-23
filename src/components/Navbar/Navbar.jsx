@@ -54,6 +54,7 @@ export const Navbar = ({ lenis }) => {
             <span
               className="navbar__header__text"
               onClick={scrollToTop}
+              aria-label="Go-To-Top-Button"
             >
               Gian-Marco Alagna
             </span>
@@ -66,6 +67,7 @@ export const Navbar = ({ lenis }) => {
             <span
               className="navbar__header__text"
               onClick={scrollToTop}
+              aria-label="Go-To-Top-Button"
             >
               {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
             </span>

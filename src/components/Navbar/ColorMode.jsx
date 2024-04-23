@@ -19,9 +19,7 @@ export const ColorMode = () => {
 
   return (
     <div id="color-mode" className="color-mode">
-      <input type="checkbox" id="color-mode-input" onChange={onChange} checked={
-        colorMode === 'dark' ? true : false
-      } />
+      <input type="checkbox" id="color-mode-input" onChange={onChange} checked={colorMode === 'dark'} aria-checked={colorMode === 'dark'} aria-label="Color-Mode-Toggle" />
       <span
         id='color-mode-icon-container'
       >

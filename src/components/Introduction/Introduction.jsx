@@ -19,7 +19,7 @@ export const Introduction = () => {
   }, [color_mode]);
 
   return (
-    <div className="Introduction border-after" id="home" ref={introductionRef}>
+    <header className="Introduction border-after" id="home" ref={introductionRef}>
       <div
         className="header"
         ref={p5Container}
@@ -35,6 +35,6 @@ export const Introduction = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

@@ -4,7 +4,7 @@ import './Card.css';
 export const Card = ({ children, className = "" }) => {
   return (
     <Reveal>
-      <div className={className.length ? "card " + className || "" : "card"}>
+      <div className={`card ${className}`.trim()}>
         {children}
       </div>
     </Reveal>
@@ -13,31 +13,31 @@ export const Card = ({ children, className = "" }) => {
 
 Card.Header = ({ children, className = "" }) => {
   return (
-    <div className={className.length ? "card__header border-after" + className : "card__header border-after"}>
+    <header className={`card__header border-after ${className}`.trim()}>
       {children}
-    </div>
+    </header>
   );
 }
 
 Card.Image = ({ src, alt, className = "" }) => {
   return (
-    <img src={src} alt={alt} className={className.length ? "card__image " + className : "card__image"} />
+    <img src={src} alt={alt} className={`card__image ${className}`.trim()} />
   );
 }
 
 Card.Body = ({ children, className = "" }) => {
   return (
-    <div className={className.length ? "card__body " + className : "card__body"}>
+    <section className={`card__body ${className}`.trim()}>
       {children}
-    </div>
+    </section>
   );
 }
 
 Card.Footer = ({ children, className = "" }) => {
   return (
-    <div className={className.length ? "card__footer " + className : "card__footer"}>
+    <footer className={`card__footer ${className}`.trim()}>
       {children}
-    </div>
+    </footer>
   );
 }
 

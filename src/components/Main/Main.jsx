@@ -7,7 +7,7 @@ import { Projects } from "../Projects/Projects";
 
 export const Main = () => {
   return (
-    <main>
+    <main className="main">
       <Introduction />
       <section className="main__section">
         <article className="main__article">
