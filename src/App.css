@@ -2,7 +2,7 @@ html, html.lenis body {
   height: auto;
 }
 
-/* .lenis.lenis-smooth {
+.lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
 
@@ -16,7 +16,7 @@ html, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
-} */
+}
 
 .grid__list {
   display: grid;
