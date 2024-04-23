@@ -172,10 +172,10 @@ body {
   min-height: 100vh;
   position: relative;
   text-align: center;
-  overflow: visible;
-  @supports (overflow: clip) {
+  /* overflow: visible; */
+  /* @supports (overflow: clip) {
     overflow: clip;
-  }
+  } */
 }
 
 .border-before::before {
