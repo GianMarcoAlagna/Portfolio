@@ -152,7 +152,7 @@
   top: 0;
   left: 0;
   width: 15rem;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(var(--bg-color-rgb), 0.9);
   backdrop-filter: blur(10px);
   z-index: 100;

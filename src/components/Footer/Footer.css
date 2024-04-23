@@ -1,13 +1,12 @@
 .footer {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
   text-align: center;
+  padding: 20px 0;
   width: 100%;
-  position: relative;
-  z-index: 100;
-  background-color: var(--bg-color-darkened);
   bottom: 0;
+  position: relative;
+  background-color: var(--bg-color-darkened);
   .footer__content {
     background-color: var(--bg-color);
     display: grid;

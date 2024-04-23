@@ -40,42 +40,44 @@ export const Navbar = ({ lenis }) => {
   }, [padding]);
 
   return (
-    <nav className="navbar border-after" style={style}>
-      <div
-        className='navbar__left'
-      >
-        <RxHamburgerMenu
-          size={30}
-          className="navbar__hamburger"
-          onClick={toggleDrawer}
-        />
-        <header className="navbar__header">
-          <span
-            className="navbar__header__text"
-            onClick={scrollToTop}
-          >
-            Gian-Marco Alagna
-          </span>
-        </header>
-      </div>
-      <div
-        className="navbar__center"
-      >
-        <header className="navbar__header center">
-          <span
-            className="navbar__header__text"
-            onClick={scrollToTop}
-          >
-            {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
-          </span>
-        </header>
-        <NavLinks links={links} />
-      </div>
-      <div
-        className="navbar__right"
-      >
-        <ColorMode />
-      </div>
+    <>
+      <nav className="navbar border-after" style={style}>
+        <div
+          className='navbar__left'
+        >
+          <RxHamburgerMenu
+            size={30}
+            className="navbar__hamburger"
+            onClick={toggleDrawer}
+          />
+          <header className="navbar__header">
+            <span
+              className="navbar__header__text"
+              onClick={scrollToTop}
+            >
+              Gian-Marco Alagna
+            </span>
+          </header>
+        </div>
+        <div
+          className="navbar__center"
+        >
+          <header className="navbar__header center">
+            <span
+              className="navbar__header__text"
+              onClick={scrollToTop}
+            >
+              {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
+            </span>
+          </header>
+          <NavLinks links={links} />
+        </div>
+        <div
+          className="navbar__right"
+        >
+          <ColorMode />
+        </div>
+      </nav>
       <div className={`navbar__drawer${drawerOpen ? " open" : ""}`} ref={drawerRef}>
         <RxHamburgerMenu
           className={"navbar__hamburger"}
@@ -91,7 +93,7 @@ export const Navbar = ({ lenis }) => {
           </a>
         ))}
       </div>
-    </nav>
+    </>
   )
 }
 
