@@ -1,3 +1,8 @@
+.carousel-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .carousel {
   display: flex;
   align-items: center;
@@ -46,7 +51,10 @@
   .carousel__item {
     width: 144px;
     height: 144px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
     margin: 0 24px;
     transition: transform 0.5s;
     &:hover {
@@ -55,7 +63,7 @@
     }
   }
   .carousel__slider {
-    display: inline-block;
+    display: flex;
     white-space: nowrap;
     width: 100%;
     animation: slide 10s linear infinite;

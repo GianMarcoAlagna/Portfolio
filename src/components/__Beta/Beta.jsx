@@ -29,7 +29,7 @@ export const Beta = ({ position }) => {
         {showTickets && (
           <div className="Working-On" data-lenis-prevent>
             <Reveal>
-              <h2 className="Working-On__text"> Currently Working On</h2>
+              <h2 className="Working-On__text">In Progress</h2>
               {tickets}
             </Reveal>
           </div>

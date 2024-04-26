@@ -8,6 +8,9 @@ export const Carousel = ({ items }) => {
         alt={item.skill}
         className="carousel__image"
       />
+      <span>
+        {item.skill}
+      </span>
     </Carousel.Item>
   ));
   return (

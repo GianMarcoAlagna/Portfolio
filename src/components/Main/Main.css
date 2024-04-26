@@ -7,20 +7,47 @@ main {
 }
 
 .main__section {
-  padding: 1rem;
-  max-width: 100%;
+  width: 100%;
+  display: flex;
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 1px);
+    background-color: var(--primary-color);
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: calc(100% - 1px);
+    background-color: var(--secondary-color);
+    z-index: 1;
+  }
   .main__article {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 2rem;
     border-radius: 1rem;
     align-items: center;
+    justify-content: center;
     max-width: 100%;
+    padding: 1rem 2rem;
   }
 }
 
-.full {
+.constrain {
   max-width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

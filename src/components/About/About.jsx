@@ -17,7 +17,7 @@ export const About = () => {
       <Card.Footer>
         My day to day stack includes: <br />
         <ul
-          className="grid__list"
+          className="grid"
         >
           {Stack.map(stack => (
             <li
