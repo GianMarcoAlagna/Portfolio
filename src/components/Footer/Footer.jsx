@@ -14,11 +14,11 @@ export const Footer = () => {
         </div>
         <div>
           <p>
-            Made with ❤️ by <a href="https://github.com/GianMarcoAlagna">Gian Marco Alagna</a>
+            Made with ❤️ by <a href="https://github.com/GianMarcoAlagna"><span style={{ textDecoration: "underline" }}>Gian Marco Alagna</span></a>
           </p>
           <img src="https://skillicons.dev/icons?perline=6&i=js,react,html,css,p5js,vite,vscode,git,github,aws,postgresql" alt="Tech Stack" />
           <p>
-            <FaArrowUp /> Tech Stack Icons by <a href="https://skillicons.dev/">Skill Icons</a> <FaArrowUp />
+            <FaArrowUp /> Tech Stack Icons by <a href="https://skillicons.dev/"><span style={{ textDecoration: "underline" }}>Skill Icons</span></a> <FaArrowUp />
           </p>
         </div>
       </Reveal>
