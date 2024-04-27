@@ -6,8 +6,7 @@
 .carousel {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: calc(144px * 6 + 48px * 2);
+  justify-content: flex-start;
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -16,6 +15,7 @@
   z-index: 2;
   box-shadow: 0 0 12px rgba(var(--secondary-color-rgb), 0.5);
   max-width: 100%;
+  width: fit-content;
   &::before {
     content: "";
     display: inline-block;
@@ -50,12 +50,10 @@
   }
   .carousel__item {
     width: 144px;
-    height: 144px;
     display: flex;
     flex-direction: column;
-    width: fit-content;
     height: fit-content;
-    margin: 0 24px;
+    margin: 0 0.5rem;
     transition: transform 0.5s;
     &:hover {
       filter: drop-shadow(0 0 12px rgba(var(--primary-color-rgb), 1));
@@ -65,7 +63,7 @@
   .carousel__slider {
     display: flex;
     white-space: nowrap;
-    width: 100%;
+    width: fit-content;
     animation: slide 10s linear infinite;
     padding: 12px 0;
     &:hover {
@@ -75,10 +73,7 @@
 }
 
 @keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-200%);
+  to {
+    transform: translateX(calc(-50%));
   }
 }
