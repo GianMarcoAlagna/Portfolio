@@ -14,12 +14,18 @@
     grid-template-rows: 1fr;
     gap: 1rem;
     padding: 1rem;
-    width: 100%;
+    width: var(--breakpoint-xl);
     border-radius: 0.5rem;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1420px) {
     .footer__content {
       grid-template-columns: 1fr;
+      width: var(--breakpoint-lg);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .footer__content {
+      width: 100%;
     }
   }
 }
