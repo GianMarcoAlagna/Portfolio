@@ -21,6 +21,7 @@
   overflow: auto;
   pointer-events: all;
   max-height: 20ch;
+  color: white; 
   &::after {
     content: "";
     position: absolute;

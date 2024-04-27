@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Card from "../Card/Card";
+import { Modal } from "../Modal/Modal";
 import ProjectsJson from "../Util/Projects.json";
 import "./Projects.css";
 
@@ -25,6 +27,9 @@ export const Projects = () => {
 }
 
 const Project = ({ project }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
   return (
     <Card>
       <Card.Header>
@@ -39,6 +44,29 @@ const Project = ({ project }) => {
         </p>
       </Card.Body>
       <Card.Footer>
+        <button onClick={openModal}>
+          Learn More
+        </button>
+        <Modal isOpen={isOpen} onClose={closeModal}>
+          <Modal.Header>
+            <h2 className="header">
+              {project.title}
+            </h2>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              {project.description}
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <a href={project.link} target="_blank" rel="noreferrer">
+              View Project
+            </a>
+            <button onClick={closeModal}>
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
       </Card.Footer>
     </Card>
   );
