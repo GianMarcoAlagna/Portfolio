@@ -3,6 +3,7 @@ import { About } from "../About/About";
 import { Skills } from "../Skills/Skills";
 import { Projects } from "../Projects/Projects";
 import "./Main.css";
+import { Interests } from "../Interests/Interests";
 
 export const Main = () => {
   return (
@@ -18,6 +19,9 @@ export const Main = () => {
           </div>
           <div className="constrain">
             <Projects />
+          </div>
+          <div className="constrain">
+            <Interests />
           </div>
         </article>
       </section>

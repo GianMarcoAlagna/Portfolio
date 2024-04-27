@@ -37,11 +37,9 @@ const Project = ({ project }) => {
           {project.title}
         </h3>
       </Card.Header>
-      <Card.Image src={project.image} alt={project.title + " Image"} />
+      <Card.Image src={project.image} alt={project.title + " Image Unavailable"} />
       <Card.Body>
-        <p>
-          {project.description_short}
-        </p>
+        {project.description_short}
       </Card.Body>
       <Card.Footer>
         <button onClick={openModal}>
@@ -54,9 +52,7 @@ const Project = ({ project }) => {
             </h2>
           </Modal.Header>
           <Modal.Body>
-            <p>
-              {project.description}
-            </p>
+            {project.description}
           </Modal.Body>
           <Modal.Footer>
             <a href={project.link} target="_blank" rel="noreferrer">
