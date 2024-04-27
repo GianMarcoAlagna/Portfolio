@@ -16,12 +16,13 @@
   }
   .modal__content {
     max-width: 50%;
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       max-width: 90%;
     }
     border-radius: 1rem;
     background-color: var(--bg-color);
     position: relative;
+    animation: reveal 0.25s forwards;
     &::before {
       content: "";
       position: absolute;

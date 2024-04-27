@@ -28,6 +28,7 @@ export const Modal = ({ children, onClose, isOpen = false }) => {
       createPortal(
         <div className={`modal ${isOpen ? "modal--open" : ""}`} onClick={overlayClick}>
           <div className="modal__content">
+            <div className="modal__overlay"></div>
             {children}
           </div>
         </div>,
