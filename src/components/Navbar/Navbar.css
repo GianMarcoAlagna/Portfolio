@@ -2,15 +2,14 @@
   position: sticky;
   top: 0px;
   z-index: 100;
-  background-color: #0000005b;
-  padding: 1.5rem 0;
-  font-size: 1.2rem;
+  background-color: rgba(var(--nav-color-rgb), 0.5);
   transition: padding 0.5s ease-in-out;
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 .navbar__left,
@@ -48,10 +47,11 @@
   background-color: rgba(var(--bg-color-rgb), 0.5);
   min-height: 3rem;
   min-width: 8rem;
-  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
   &:hover {
-    background-color: rgba(var(--bg-color-rgb), 0.7);
-    box-shadow: 0 0 0.5rem rgba(var(--inverted-bg-color-rgb), 0.5);
+    box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
+    transform: translate(0.15rem, -0.15rem);
   }
   .navbar__header__text {
     background-image: linear-gradient(
@@ -71,31 +71,31 @@
   display: flex;
   border-radius: 1rem;
   font-size: 1.5rem;
-  background-color: rgba(var(--bg-color-rgb), 0.25);
-  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
   gap: 0.1rem;
   width: fit-content;
   padding: 0.5rem;
-  border: 2px solid rgba(var(--inverted-bg-color-rgb), 0.5);
+  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
   &:hover {
-    box-shadow: 0 0 0.5rem rgba(var(--inverted-bg-color-rgb), 0.5);
+    box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
+    transform: translate(0.15rem, -0.15rem);
   }
   .navbar__link {
     position: relative;
     color: var(--text-color);
-    background-color: rgba(var(--bg-color-rgb), 0.5);
+    background-color: rgba(var(--bg-color-darkened-rgb), 0.5);
     text-decoration: none;
     width: 100%;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
       transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out,
       font-size 0.5s ease-in-out;
-    overflow: hidden;
     display: flex;
     min-width: 8rem;
     min-height: 3rem;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border: 2px solid rgba(var(--inverted-bg-color-rgb), 0.25);
     &.left-edge {
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
@@ -153,13 +153,20 @@
   top: 0;
   left: 0;
   width: 15rem;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(var(--bg-color-rgb), 0.9);
   backdrop-filter: blur(10px);
   z-index: 100;
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   align-items: center;
+  .navbar__hamburger {
+    display: block;
+    &:hover,
+    &:active {
+      transform: scale(1.5);
+    }
+  }
   &.open {
     transform: translateX(0);
   }

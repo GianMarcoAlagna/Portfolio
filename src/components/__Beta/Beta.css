@@ -6,7 +6,7 @@
   opacity: 0.8;
   box-shadow: 1px 1px 20px rgba(var(--primary-color-rgb));
   .Beta-Tag__text {
-    color: var(--white-color);
+    color: white;
     font-size: 1rem;
     padding: 0.1rem 1rem;
     text-shadow: 1px 1px 1px var(--dark-color);
@@ -21,6 +21,7 @@
   overflow: auto;
   pointer-events: all;
   max-height: 20ch;
+  color: white; 
   &::after {
     content: "";
     position: absolute;

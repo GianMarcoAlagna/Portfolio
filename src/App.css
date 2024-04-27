@@ -1,8 +1,4 @@
-#root {
-  margin: 0 auto;
-  text-align: center;
-}
-
+html,
 html.lenis body {
   height: auto;
 }
@@ -23,13 +19,23 @@ html.lenis body {
   pointer-events: none;
 }
 
-.Grid__list {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
-  padding: 1rem;
+  grid-template-rows: auto;
   width: 100%;
-  .Grid__list-item {
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .card {
+    box-shadow: -2px 2px 1px rgba(var(--secondary-color-rgb), 0.5);
+    &:hover {
+      box-shadow: -4px 4px 2px rgba(var(--primary-color-rgb), 0.5);
+    }
+  }
+  .grid__list-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +43,6 @@ html.lenis body {
     font-size: 2rem;
     padding: 0.5rem 0rem 0rem 0rem;
     overflow: hidden;
-    border-radius: 0.5rem;
-    background-color: var(--bg-color);
-    box-shadow: -0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.75);
     &::after {
       content: "";
       display: block;
@@ -52,7 +55,7 @@ html.lenis body {
       );
       background-size: 100%;
     }
-    .Grid__list__item__body {
+    .grid__list__item__body {
       display: flex;
       font-size: 1.2rem;
       justify-content: center;
@@ -63,9 +66,15 @@ html.lenis body {
       width: 100%;
     }
   }
+  & div {
+    height: 100%;
+  }
+  .grid__item {
+    width: 100%;
+  }
 }
 
-.Header {
+.header {
   margin: 0;
   padding: 0;
 }
@@ -108,10 +117,4 @@ html.lenis body {
     transform: translateY(1rem);
     animation: none;
   }
-}
-
-.Flex-Grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 }

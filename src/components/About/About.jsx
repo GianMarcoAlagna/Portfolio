@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <Card className="About">
       <Card.Header>
-        <h2 className="Header">
+        <h2 className="header">
           About Me
         </h2>
       </Card.Header>
@@ -17,12 +17,12 @@ export const About = () => {
       <Card.Footer>
         My day to day stack includes: <br />
         <ul
-          className="Grid__list"
+          className="grid"
         >
           {Stack.map(stack => (
             <li
               key={stack}
-              className="Grid__list-item"
+              className="grid__list-item"
             >
               {stack}
             </li>

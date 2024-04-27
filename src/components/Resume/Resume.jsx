@@ -3,7 +3,6 @@ import { RiFileList3Fill } from "react-icons/ri";
 import Links from "../Util/Links.json";
 
 export const Resume = () => {
-  console.log(Links)
   return (
     <Card>
       <Card.Header>

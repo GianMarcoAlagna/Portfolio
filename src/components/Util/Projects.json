@@ -1,0 +1,37 @@
+{
+  "CRUD": {
+    "title": "CRUD",
+    "description_short": "A web application that allows users to create and visualize character relationships in a story.",
+    "description": "CRUD aka Character Relationships Unification Diagram is a web application that allows users to create and visualize character relationships in a story. This application is designed to help writers and creators keep track of their characters and their relationships in a visual and interactive way.",
+    "image": "[src]",
+    "link": "https://github.com/Character-Relationship-Unified-Diagram/CRUD"
+  },
+  "Faros-Scope": {
+    "title": "Faros-Scope",
+    "description_short": "A Devops tool that provides a visual representation and metrics for your Kubernetes cluster.",
+    "description": "Faros-Scope is a Devops tool that provides a visual representation and metrics for your Kubernetes cluster.",
+    "image": "[src]",
+    "link": "https://github.com/oslabs-beta/faros-scope"
+  },
+  "Chaxolotl": {
+    "title": "Chaxolotl",
+    "description_short": "A live chatroom with features such as private chatrooms, media sharing, and more.",
+    "description": "Chaxolotl is a live chatroom that utilizes the power of WebSockets to provide real-time communication with features such as private chatrooms, media sharing, and more.",
+    "image": "[src]",
+    "link": "https://github.com/monkeyboomonkey/chatroom"
+  },
+  "Co-Sync": {
+    "title": "Co-Sync",
+    "description_short": "A project management web application designed to streamline task management and enhance team collaboration.",
+    "description": "Co-Sync is a project management web application designed to streamline task management and enhance team collaboration. This platform empowers teams to efficiently organize, share, and track their projects and tasks, ensuring seamless communication and following agile methodology.",
+    "image": "[src]",
+    "link": "https://github.com/Co-Sync/Co-Sync"
+  },
+  "Listify": {
+    "title": "Listify",
+    "description_short": "A note-taking app with rich text editing, nested lists and more.",
+    "description": "Listify is a web application that allows users to create complex lists with features such as a built-in text editor, and nested lists.",
+    "image": "[src]",
+    "link": "https://github.com/GianMarcoAlagna/Listify"
+  }
+}
