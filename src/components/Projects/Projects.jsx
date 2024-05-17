@@ -37,7 +37,7 @@ const Project = ({ project }) => {
           {project.title}
         </h3>
       </Card.Header>
-      <Card.Image src={project.image} alt={project.title + " Image Unavailable"} />
+      {/* <Card.Image src={project.image} alt={project.title + " Image Unavailable"} /> */}
       <Card.Body>
         {project.description_short}
       </Card.Body>
