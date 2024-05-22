@@ -90,6 +90,8 @@ export const Navbar = ({ lenis }) => {
             href={link[1]}
             key={link[1]}
             className="navbar__drawer__link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {link[0]}
           </a>
@@ -124,6 +126,8 @@ const NavLink = ({ link, url, leftEdge, rightEdge }) => {
       href={url}
       key={link}
       className={leftEdge ? "navbar__link left-edge" : rightEdge ? "navbar__link right-edge" : "navbar__link"}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {link}
     </a>

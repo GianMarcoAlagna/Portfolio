@@ -11,6 +11,8 @@ export const Contact = () => {
         <a
           className="Introduction__link"
           href="mailto: marcoalagna1@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <IoIosMail />
           Marcoalagna1@gmail.com

@@ -13,7 +13,7 @@ export const Resume = () => {
           className="Introduction__link"
           href={Links.Resume}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <RiFileList3Fill />
           View my resume
