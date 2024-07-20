@@ -33,6 +33,12 @@ export const Navbar = ({ lenis }) => {
     setDrawerOpen(!drawerOpen);
   }
 
+  useEffect(() => {
+    if (screen.width >= 1450) {
+      setDrawerOpen(false);
+    }
+  }, [screen.width]);
+
   // const style = useMemo(() => {
   //   return {
   //     padding
@@ -90,9 +96,9 @@ export const Navbar = ({ lenis }) => {
           <div
             className="drawer"
             ref={drawerRef}
-            // style={{
-            //   display: drawerOpen ? 'block' : 'none'
-            // }}
+          // style={{
+          //   display: drawerOpen ? 'block' : 'none'
+          // }}
           >
             <NavLinks links={links} />
           </div>
