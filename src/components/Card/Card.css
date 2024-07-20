@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: var(--bg-color-darkened);
   border-radius: 0.5rem;
-  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
+  /* box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75); */
   overflow: hidden;
   position: relative;
   transition: 0.3s ease-in-out;

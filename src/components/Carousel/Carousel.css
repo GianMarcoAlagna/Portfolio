@@ -3,12 +3,16 @@
   margin: 0 auto;
 }
 
+.state-button:has(.state-button-input:checked) + .carousel__slider {
+  animation-play-state: paused;
+}
+
 .carousel {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  margin: 0 auto;
+  margin: 0rem auto;
   overflow: hidden;
   position: relative;
   border-radius: 1rem;
@@ -16,12 +20,13 @@
   box-shadow: 0 0 12px rgba(var(--secondary-color-rgb), 0.5);
   max-width: 100%;
   width: fit-content;
+  padding-bottom: 2.5rem;
   &::before {
     content: "";
     display: inline-block;
     position: absolute;
     width: 24px;
-    height: 100%;
+    height: calc(100% + 2.5rem);
     left: 0;
     backdrop-filter: blur(24px);
     background-image: linear-gradient(
@@ -37,7 +42,7 @@
     display: inline-block;
     position: absolute;
     width: 24px;
-    height: 100%;
+    height: calc(100% + 2.5rem);
     right: 0;
     backdrop-filter: blur(24px);
     background-image: linear-gradient(
@@ -66,10 +71,24 @@
     width: fit-content;
     animation: slide 10s linear infinite;
     padding: 12px 0;
+    border-radius: 1rem;
     &:hover {
       animation-play-state: paused;
     }
   }
+}
+
+.carousel__pause {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 100;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 @keyframes slide {

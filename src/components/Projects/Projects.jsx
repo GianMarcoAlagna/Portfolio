@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import { Modal } from "../Modal/Modal";
 import ProjectsJson from "../Util/Projects.json";
 import "./Projects.css";
+import { ManualCarousel } from "../Carousel/ManualCarousel";
 
 export const Projects = () => {
   const projectList = Object.values(ProjectsJson).map((project, index) => {
@@ -37,7 +38,6 @@ const Project = ({ project }) => {
           {project.title}
         </h3>
       </Card.Header>
-      {/* <Card.Image src={project.image} alt={project.title + " Image Unavailable"} /> */}
       <Card.Body>
         {project.description_short}
       </Card.Body>
@@ -52,6 +52,7 @@ const Project = ({ project }) => {
             </h2>
           </Modal.Header>
           <Modal.Body>
+            <ManualCarousel images={project.images} />
             {project.description}
           </Modal.Body>
           <Modal.Footer>

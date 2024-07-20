@@ -1,0 +1,70 @@
+.state-button {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  overflow: hidden;
+  scale: 0.5;
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-115%);
+}
+
+.state-button-line {
+  background-color: #FFFFFF;
+  width: 20px;
+  height: 85px;
+  border-radius: 20px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.state-button-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  rotate: 90deg;
+}
+
+.left {
+  transform: rotate(30deg) translate(0px, -15px);
+}
+
+.right {
+  transform: rotate(-30deg) translate(25px, 0px);
+}
+
+.bottom {
+  transform: rotate(90deg) translate(15px, 15px);
+}
+
+.state-button-input {
+  appearance: none;
+  position: absolute;
+  cursor: pointer;
+  width: 125px;
+  height: 125px;
+  z-index: 9999;
+}
+
+.state-button-input:checked ~ .left {
+  transform: rotate(90deg) translate(20px, -20px);
+}
+
+.state-button-input:checked ~ .right {
+  transform: rotate(-90deg) translate(20px, 0px);
+}
+
+.state-button-input:checked ~ .bottom {
+  width: 0px;
+  height: 0px;
+  transform: rotate(90deg) translate(0px, -200px);
+  opacity: 0%;
+}

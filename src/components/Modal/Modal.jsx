@@ -46,3 +46,7 @@ Modal.Body = ({ children }) => {
 Modal.Footer = ({ children }) => {
   return <footer className="modal__footer">{children}</footer>;
 }
+
+Modal.Image = ({ children }) => {
+  return <section className="modal__image">{children}</section>;
+}

@@ -67,13 +67,23 @@
       background-clip: text;
     }
   }
+  .modal__image {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+  }
   .modal__body {
     padding: 1rem;
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .modal__footer {
     display: flex;

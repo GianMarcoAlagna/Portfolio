@@ -1,4 +1,5 @@
 import "./Carousel.css";
+import { PlayButton } from "./PlayButton";
 
 export const Carousel = ({ items }) => {
   const carouselItems = items.map((item, index) => (
@@ -14,12 +15,15 @@ export const Carousel = ({ items }) => {
     </Carousel.Item>
   ));
   return (
-    <div className="carousel">
-      <Carousel.Slider>
-        {carouselItems}
-        {carouselItems}
-      </Carousel.Slider>
-    </div>
+    <>
+      <div className="carousel">
+        <PlayButton />
+        <Carousel.Slider>
+          {carouselItems}
+          {carouselItems}
+        </Carousel.Slider>
+      </div>
+    </>
   );
 }
 

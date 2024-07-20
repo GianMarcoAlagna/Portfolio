@@ -1,8 +1,8 @@
-import { useMemo, useRef, useState } from 'react';
-import { RxHamburgerMenu } from "react-icons/rx";
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ColorMode } from './ColorMode';
 import { useMainContext } from '../../context/MainContext';
 import Links from '../Util/Links.json';
+import { Hamburger } from './Hamburger';
 import './Navbar.css';
 
 export const Navbar = ({ lenis }) => {
@@ -12,15 +12,15 @@ export const Navbar = ({ lenis }) => {
   const links = Object.entries(Links);
   const { screen } = useMainContext();
 
-  lenis.on('scroll', () => {
-    switch (window.scrollY) {
-      case 0:
-        setPadding('1.5rem 0.5rem');
-        break;
-      default:
-        setPadding('0.5rem 0.5rem');
-    }
-  });
+  // lenis.on('scroll', () => {
+  //   switch (window.scrollY) {
+  //     case 0:
+  //       setPadding('1.5rem 0.5rem');
+  //       break;
+  //     default:
+  //       setPadding('0.5rem 0.5rem');
+  //   }
+  // });
 
   function scrollToTop() {
     window.scrollTo({
@@ -33,23 +33,26 @@ export const Navbar = ({ lenis }) => {
     setDrawerOpen(!drawerOpen);
   }
 
-  const style = useMemo(() => {
-    return {
-      padding
-    }
-  }, [padding]);
+  // const style = useMemo(() => {
+  //   return {
+  //     padding
+  //   }
+  // }, [padding]);
 
   return (
     <>
-      <nav className="navbar border-after" style={style}>
+      <nav className={`navbar border-after${drawerOpen ? ' expanded' : ''}`}>
         <div
           className='navbar__left'
         >
-          <RxHamburgerMenu
-            size={30}
-            className="navbar__hamburger"
-            onClick={toggleDrawer}
-          />
+          {
+            screen.width < 1450 &&
+            <Hamburger
+              className="navbar__hamburger"
+              onClick={toggleDrawer}
+              checked={drawerOpen}
+            />
+          }
           <header className="navbar__header">
             <span
               className="navbar__header__text"
@@ -72,31 +75,29 @@ export const Navbar = ({ lenis }) => {
               {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
             </span>
           </header>
-          <NavLinks links={links} />
+          {
+            screen.width >= 1450 &&
+            <NavLinks links={links} />
+          }
         </div>
         <div
           className="navbar__right"
         >
           <ColorMode />
         </div>
-      </nav>
-      <div className={`navbar__drawer${drawerOpen ? " open" : ""}`} ref={drawerRef}>
-        <RxHamburgerMenu
-          className={"navbar__hamburger"}
-          onClick={toggleDrawer}
-        />
-        {links.map(link => (
-          <a
-            href={link[1]}
-            key={link[1]}
-            className="navbar__drawer__link"
-            target="_blank"
-            rel="noopener noreferrer"
+        {
+          screen.width < 1450 &&
+          <div
+            className="drawer"
+            ref={drawerRef}
+            // style={{
+            //   display: drawerOpen ? 'block' : 'none'
+            // }}
           >
-            {link[0]}
-          </a>
-        ))}
-      </div>
+            <NavLinks links={links} />
+          </div>
+        }
+      </nav>
     </>
   )
 }
