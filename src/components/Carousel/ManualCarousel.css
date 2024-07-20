@@ -64,6 +64,9 @@
   text-decoration: none;
   color: white;
   margin: 0 0.1em;
+  &:active {
+    transform: scale(0.5);
+  }
 }
 
 .profile-image {
