@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer/Footer";
 import './App.css'
 
 function App() {
-  const lenis = new Lenis()
+  const lenis = new Lenis();
 
   function raf(time) {
     lenis.raf(time)
