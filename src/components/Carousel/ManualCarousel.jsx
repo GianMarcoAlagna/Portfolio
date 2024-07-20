@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./ManualCarousel.css";
 
-export const ManualCarousel = ({ images }) => {
+export const ManualCarousel = ({ images, width, height, imageClass }) => {
   const [currIndex, setCurrIndex] = useState(0);
   if (!images || images.length === 0) {
     return null;
@@ -27,7 +27,8 @@ export const ManualCarousel = ({ images }) => {
               <img
                 src={image}
                 alt={`carousel image ${index}`}
-                className={index === currIndex ? 'active' : 'inactive'}
+                className={`${index === currIndex ? 'active' : 'inactive'}${imageClass ? ' ' + imageClass : ''}`}
+                style={{ width, height }}
               />
             </div>
           ))}

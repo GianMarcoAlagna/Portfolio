@@ -1,4 +1,5 @@
 import Card from "../Card/Card";
+import { ManualCarousel } from "../Carousel/ManualCarousel";
 import Stack from "../Util/Stack.json";
 
 export const About = () => {
@@ -9,6 +10,7 @@ export const About = () => {
           About Me
         </h2>
       </Card.Header>
+        <ManualCarousel images={["profile1.jpg", "profile2.jpg", "profile3.jpg"]} imageClass={'profile-image'} />
       <Card.Body>
         I'm a full stack developer based in the United States, Texas. <br />
         I have a passion for web development and love creating beautiful and memorable applications. <br />

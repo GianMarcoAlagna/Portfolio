@@ -28,14 +28,6 @@
   cursor: pointer;
 }
 
-/* .triple-bar__input:checked {
-    background-color: red;
-} */
-
-.triple-bar__input:checked ~ .triple-bar__bar {
-  /* background-color: red; */
-}
-
 .triple-bar__input:checked ~ .bar-left {
   transform: rotate(45deg) translate(12px, -12px);
 }
