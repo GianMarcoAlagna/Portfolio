@@ -13,9 +13,9 @@
   overflow: hidden;
   flex-wrap: wrap;
   padding: 1rem 0.5rem;
-  height: 6rem;
+  height: 5.5rem;
   &.expanded {
-    height: 12rem;
+    height: 16rem;
   }
 }
 
@@ -24,7 +24,7 @@
 .navbar__center {
   display: flex;
   width: 33.33%;
-  height: 4rem;
+  /* height: 4rem; */
 }
 
 .navbar__left {
@@ -147,12 +147,12 @@
 
 .drawer {
   position: relative;
-  bottom: -0.5rem;
+  bottom: 0rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(1rem);
   display: flex;
-  height: 4rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .navbar__header.center {

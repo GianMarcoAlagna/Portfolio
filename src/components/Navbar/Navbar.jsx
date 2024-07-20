@@ -100,7 +100,8 @@ export const Navbar = ({ lenis }) => {
           //   display: drawerOpen ? 'block' : 'none'
           // }}
           >
-            <NavLinks links={links} />
+            <NavLinks links={links.slice(0, links.length / 2)} />
+            <NavLinks links={links.slice(links.length / 2, links.length)} />
           </div>
         }
       </nav>

@@ -17,14 +17,14 @@
     "title": "Chaxolotl",
     "description_short": "A live chatroom with features such as private chatrooms, media sharing, and more.",
     "description": "Chaxolotl is a live chatroom that utilizes the power of WebSockets to provide real-time communication with features such as private chatrooms, media sharing, and more.",
-    "images": "[src]",
+    "images": [],
     "link": "https://github.com/monkeyboomonkey/chatroom"
   },
   "Co-Sync": {
     "title": "Co-Sync",
     "description_short": "A project management web application designed to streamline task management and enhance team collaboration.",
     "description": "Co-Sync is a project management web application designed to streamline task management and enhance team collaboration. This platform empowers teams to efficiently organize, share, and track their projects and tasks, ensuring seamless communication and following agile methodology.",
-    "images": "[src]",
+    "images": [],
     "link": "https://github.com/Co-Sync/Co-Sync"
   },
   "Listify": {

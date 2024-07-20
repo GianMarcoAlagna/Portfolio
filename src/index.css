@@ -163,9 +163,10 @@ button {
   background-position: center;
   color: white;
   cursor: pointer;
+  border: 2px solid rgba(var(--inverted-bg-color-rgb), 0.25);
   transition: background-position 0.25s ease-in-out, transform 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
-  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
+  /* box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75); */
   &:hover {
     box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
     background-position: right;
