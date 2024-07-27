@@ -35,7 +35,7 @@ html.lenis body {
   padding: 1rem;
   place-items: center;
   @media screen and (max-width: 725px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   .card {
     &:hover {
