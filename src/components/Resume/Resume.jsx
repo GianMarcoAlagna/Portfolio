@@ -6,7 +6,7 @@ export const Resume = () => {
   return (
     <Card>
       <Card.Header>
-        Curriculum Vitae
+        <h4 className="header">Resume</h4>
       </Card.Header>
       <Card.Body>
         <a

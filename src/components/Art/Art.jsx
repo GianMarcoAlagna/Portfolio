@@ -27,7 +27,7 @@ export const Art = () => {
   return (
     <Card>
       <Card.Header>
-        <h2 className="header">Algorithmic Art<br />(Interactive)</h2>
+        <h2 className="header">Algorithmic Art</h2>
       </Card.Header>
       <Card.Body>
         <div className="art__grid">

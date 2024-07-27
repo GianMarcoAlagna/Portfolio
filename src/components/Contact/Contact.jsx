@@ -5,7 +5,7 @@ export const Contact = () => {
   return (
     <Card>
       <Card.Header>
-        Contact Me
+        <h4 className="header">Contact</h4>
       </Card.Header>
       <Card.Body>
         <a

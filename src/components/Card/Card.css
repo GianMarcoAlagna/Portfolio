@@ -15,6 +15,7 @@
     box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
     transform: translate(0.15rem, -0.15rem);
   }
+  
   .card__header {
     text-align: center;
     margin: 0rem;
@@ -23,7 +24,7 @@
     padding: 1rem;
     position: relative;
   }
-
+  
   .card__body {
     display: flex;
     font-size: 1.4rem;
