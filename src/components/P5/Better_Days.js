@@ -1,6 +1,6 @@
-export default function Better_Days(p) {
+export default function Better_Days(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   let t = 0.1;

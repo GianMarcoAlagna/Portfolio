@@ -1,6 +1,6 @@
-export default function Fabric(p) {
+export default function Fabric(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   function draw() {

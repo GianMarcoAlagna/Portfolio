@@ -1,6 +1,6 @@
-export default function Oscillation(p) {
+export default function Oscillation(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   let delta = 0;

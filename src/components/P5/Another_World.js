@@ -1,6 +1,6 @@
-export default function Another_World(p) {
+export default function Another_World(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   const shapeSize = 100;

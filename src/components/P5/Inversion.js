@@ -1,6 +1,6 @@
-export default function Inversion(p) {
+export default function Inversion(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   let delta = 0;
@@ -40,10 +40,10 @@ export default function Inversion(p) {
 
     p.stroke("rgb(0,0,0)");
     p.fill("rgb(255,255,255)");
-    p.circle(p.width / 2, p.height / 1.25 + p.sin(delta) * 2, 150);
+    p.circle(p.width / 2, p.height / 1.25 + p.sin(delta) * 2, width / 3);
     p.stroke("rgb(255,146,0)");
     p.fill("rgb(255,101,0)");
-    p.circle(p.width / 2, p.height / 5 - p.sin(delta) * 2, 150);
+    p.circle(p.width / 2, p.height / 5 - p.sin(delta) * 2, width / 3);
 
     delta += 0.1;
   }

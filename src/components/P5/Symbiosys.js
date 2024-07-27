@@ -1,6 +1,6 @@
-export default function Symbiosys(p) {
+export default function Symbiosys(p, width, height) {
   function setup() {
-    p.createCanvas(450, 500);
+    p.createCanvas(width, height);
   }
 
   function draw() {

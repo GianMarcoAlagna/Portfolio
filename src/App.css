@@ -20,10 +20,14 @@ html.lenis body {
 }
 
 .p5-container {
-  min-width: 450px;
-  min-height: 500px;
+  min-width: 500px;
+    min-height: 500px;
   height: 100%;
   width: 100%;
+  @media screen and (max-width: 725px) {
+    min-width: 300px;
+    min-height: 300px;
+  }
 }
 
 .grid {
@@ -78,6 +82,19 @@ html.lenis body {
   }
   .grid__item {
     width: 100%;
+  }
+}
+
+.art__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+  grid-template-rows: auto;
+  width: 100%;
+  padding: 1rem;
+  place-items: center;
+  @media screen and (max-width: 725px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 

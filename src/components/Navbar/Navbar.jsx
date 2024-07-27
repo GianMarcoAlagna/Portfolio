@@ -5,22 +5,11 @@ import Links from '../Util/Links.json';
 import { Hamburger } from './Hamburger';
 import './Navbar.css';
 
-export const Navbar = ({ lenis }) => {
-  const [padding, setPadding] = useState('1.5rem 0.5rem')
+export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
   const links = Object.entries(Links);
   const { screen } = useMainContext();
-
-  // lenis.on('scroll', () => {
-  //   switch (window.scrollY) {
-  //     case 0:
-  //       setPadding('1.5rem 0.5rem');
-  //       break;
-  //     default:
-  //       setPadding('0.5rem 0.5rem');
-  //   }
-  // });
 
   function scrollToTop() {
     window.scrollTo({
@@ -38,12 +27,6 @@ export const Navbar = ({ lenis }) => {
       setDrawerOpen(false);
     }
   }, [screen.width]);
-
-  // const style = useMemo(() => {
-  //   return {
-  //     padding
-  //   }
-  // }, [padding]);
 
   return (
     <>
