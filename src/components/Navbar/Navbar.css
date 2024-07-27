@@ -48,14 +48,13 @@
   font-family: "Satisfy", cursive;
   font-size: 2rem;
   text-align: center;
-  border: 1px solid rgba(var(--bg-color-rgb), 0.5);
+  border: 1px solid rgba(var(--primary-color-rgb), 1);
   padding: 0.2rem;
   border-radius: 1rem;
   background-color: rgba(var(--bg-color-rgb), 0.5);
   min-height: 3rem;
   min-width: 8rem;
   transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
-  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
   &:hover {
     box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
     transform: translate(0.15rem, -0.15rem);
