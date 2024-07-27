@@ -82,7 +82,7 @@
   gap: 0.1rem;
   width: fit-content;
   padding: 0.5rem;
-  box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75);
+  /* box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75); */
   margin: 0 auto;
   &:hover {
     box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
@@ -103,7 +103,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border: 2px solid rgba(var(--inverted-bg-color-rgb), 0.25);
+    border: 2px solid rgba(var(--primary-color-rgb), 1);
     &.left-edge {
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;

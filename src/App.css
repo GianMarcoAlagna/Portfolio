@@ -19,20 +19,27 @@ html.lenis body {
   pointer-events: none;
 }
 
+.p5-container {
+  min-width: 450px;
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 1rem;
   grid-template-rows: auto;
   width: 100%;
   padding: 1rem;
+  place-items: center;
   @media screen and (max-width: 725px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .card {
-    box-shadow: -2px 2px 1px rgba(var(--secondary-color-rgb), 0.5);
     &:hover {
-      box-shadow: -4px 4px 2px rgba(var(--primary-color-rgb), 0.5);
+      box-shadow: -4px 4px 2px rgba(#000000, 0.5);
     }
   }
   .grid__list-item {

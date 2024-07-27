@@ -14,7 +14,8 @@ export const Footer = () => {
         </div>
         <div>
           <p>
-            Made with ❤️ by <a href="https://github.com/GianMarcoAlagna"><span style={{ textDecoration: "underline" }}>Gian Marco Alagna</span></a>
+            Entirely custom made with ❤️ by <a href="https://github.com/GianMarcoAlagna"><span style={{ textDecoration: "underline" }}>Gian Marco Alagna</span></a>
+            <br />Found a bug? Shoot me an <a href="mailto:marcoalagna1@gmail.com"><span style={{ textDecoration: "underline" }}>email</span></a>
           </p>
           <img src="https://skillicons.dev/icons?perline=6&i=js,react,html,css,p5js,vite,vscode,git,github,aws,postgresql" alt="Tech Stack" />
           <p>

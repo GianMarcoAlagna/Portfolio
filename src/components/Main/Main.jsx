@@ -4,6 +4,7 @@ import { Skills } from "../Skills/Skills";
 import { Projects } from "../Projects/Projects";
 import "./Main.css";
 import { Interests } from "../Interests/Interests";
+import { Art } from "../Art/Art";
 
 export const Main = () => {
   return (
@@ -19,6 +20,9 @@ export const Main = () => {
           </div>
           <div className="constrain">
             <Projects />
+          </div>
+          <div className="constrain">
+            <Art />
           </div>
           <div className="constrain">
             <Interests />
