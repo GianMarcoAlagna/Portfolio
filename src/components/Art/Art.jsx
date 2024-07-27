@@ -6,6 +6,8 @@ import p5 from "p5"
 import "./Art.css"
 import Better_Days from "../P5/Better_Days"
 import Inversion from "../P5/Inversion"
+import Symbiosys from "../P5/Symbiosys"
+import Fabric from "../P5/Fabric"
 
 export const Art = () => {
   return (
@@ -19,6 +21,8 @@ export const Art = () => {
           <ArtPiece title="Another World" func={Another_World} />
           <ArtPiece title="Better Days" func={Better_Days} />
           <ArtPiece title="Inversion" func={Inversion} />
+          <ArtPiece title="Symbiosys" func={Symbiosys} />
+          <ArtPiece title="Fabric" func={Fabric} />
         </div>
       </Card.Body>
     </Card>
