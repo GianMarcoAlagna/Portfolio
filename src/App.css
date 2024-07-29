@@ -21,7 +21,7 @@ html.lenis body {
 
 .p5-container {
   min-width: 500px;
-    min-height: 500px;
+  min-height: 500px;
   height: 100%;
   width: 100%;
   @media screen and (max-width: 725px) {
@@ -95,6 +95,9 @@ html.lenis body {
   place-items: center;
   @media screen and (max-width: 725px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 

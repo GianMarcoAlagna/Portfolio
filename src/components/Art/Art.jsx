@@ -15,7 +15,7 @@ export const Art = () => {
   const { screen } = useMainContext();
 
   useEffect(() => {
-    if (screen.width < 768) {
+    if (screen.width < 725) { // 450
       console.log("Setting art dimensions to 300x300")
       setArtDimensions({ width: 300, height: 300 });
     } else {

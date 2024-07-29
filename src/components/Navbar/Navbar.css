@@ -15,7 +15,7 @@
   padding: 1rem 0.5rem;
   height: 5.5rem;
   &.expanded {
-    height: 16rem;
+    height: 18rem;
   }
 }
 
