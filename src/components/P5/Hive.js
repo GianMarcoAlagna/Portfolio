@@ -1,11 +1,11 @@
-export default function Hive(p, parentRef, color_mode) {
-  let height = parentRef.clientHeight || p.windowHeight;
-  let width = parentRef.clientWidth || p.windowWidth;
+export default function Hive(p, color_mode) {
+  let height = p.windowHeight;
+  let width = p.windowWidth;
   function setup() {
     p.createCanvas(width, height);
     window.addEventListener("resize", () => {
-      height = parentRef.clientHeight || p.windowHeight;
-      width = parentRef.clientWidth || p.windowWidth;
+      height = p.windowHeight;
+      width = p.windowWidth;
       p.resizeCanvas(width, height);
     });
   }

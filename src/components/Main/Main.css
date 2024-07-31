@@ -9,30 +9,10 @@ main {
 .main__section {
   width: 100%;
   display: flex;
-  max-width: var(--breakpoint-xl);
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  /* &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: calc(100% - 1px);
-    background-color: var(--primary-color);
-    z-index: 1;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3px;
-    height: calc(100% - 1px);
-    background-color: var(--secondary-color);
-    z-index: 1;
-  } */
+  background-color: var(--bg-color);
   .main__article {
     display: flex;
     flex-direction: column;

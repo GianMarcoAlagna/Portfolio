@@ -6,10 +6,12 @@ import "./Main.css";
 import { Interests } from "../Interests/Interests";
 import { Art } from "../Art/Art";
 
-export const Main = () => {
+export const Main = ({ lenis }) => {
   return (
     <main className="main">
-      <Introduction />
+      <Introduction
+        lenis={lenis}
+      />
       <section className="main__section">
         <article className="main__article">
           <div className="constrain">

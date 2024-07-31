@@ -17,9 +17,10 @@ function App() {
     <>
       <MainProvider>
         <Navbar
+        />
+        <Main
           lenis={lenis}
         />
-        <Main />
         <Footer />
       </MainProvider>
     </>

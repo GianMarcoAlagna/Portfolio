@@ -8,6 +8,7 @@ import './Navbar.css';
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
+  const navRef = useRef(null);
   const links = Object.entries(Links);
   const { screen } = useMainContext();
 
@@ -30,7 +31,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar border-after${drawerOpen ? ' expanded' : ''}`}>
+      <nav className={`navbar border-after${drawerOpen ? ' expanded' : ''}`} ref={navRef}>
         <div
           className='navbar__left'
         >
@@ -48,7 +49,7 @@ export const Navbar = () => {
               onClick={scrollToTop}
               aria-label="Go-To-Top-Button"
             >
-              Gian-Marco Alagna
+              GMA
             </span>
           </header>
         </div>

@@ -9,6 +9,8 @@
   background-size: 100%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
   background-clip: text;
   padding: 0 0.5rem;
 }
