@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import Lenis from '@studio-freight/lenis';
 import { Main, Navbar } from './components';
 import { MainProvider } from './context/MainContext';
 import { Footer } from "./components/Footer/Footer";
 import { Introduction } from './components';
 import { Preloader } from './components/Preloader/Preloader';
+import Lenis from '@studio-freight/lenis';
 import './App.css';
 
 function App() {
