@@ -45,6 +45,7 @@ export const Art = () => {
 const ArtPiece = ({ title, func, width, height }) => {
   const artRef = useRef(null)
   const sketchRef = useRef(null)
+  const mouseOver = useRef(false)
   const { ref, inView } = useInView({
     threshold: 0
   })
@@ -54,9 +55,11 @@ const ArtPiece = ({ title, func, width, height }) => {
     sketchRef.current.noLoop()
 
     function handleMouseIn() {
+      mouseOver.current = true;
       sketchRef.current.loop()
     }
     function handleMouseOut() {
+      mouseOver.current = false;
       sketchRef.current.noLoop()
     }
 
@@ -68,11 +71,11 @@ const ArtPiece = ({ title, func, width, height }) => {
       artRef.current.removeEventListener("mouseenter", handleMouseIn);
       artRef.current.removeEventListener("mouseleave", handleMouseOut);
     }
-  }, [func, width, height]); // Add width and height as dependencies
+  }, [func, width, height]);
 
   useEffect(() => {
     if (sketchRef.current) {
-      if (inView) {
+      if (inView && mouseOver.current) {
         sketchRef.current.loop()
       } else {
         sketchRef.current.noLoop()
