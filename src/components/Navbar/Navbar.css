@@ -1,7 +1,7 @@
 .navbar {
   position: sticky;
   top: 0px;
-  z-index: 100;
+  z-index: 9999;
   background-color: rgba(var(--nav-color-rgb), 0.5);
   transition: height 0.5s ease-in-out;
   backdrop-filter: blur(10px);

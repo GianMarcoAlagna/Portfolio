@@ -3,15 +3,6 @@ html.lenis body {
   height: auto;
 }
 
-.content {
-  height: 200vh; /* Ensure there's enough content to scroll */
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  top: 100vh;
-}
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }

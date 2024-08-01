@@ -2,35 +2,58 @@ import { useRef, useEffect } from "react";
 import p5 from "p5";
 import { useMainContext } from "../../context/MainContext";
 import Hive from "../P5/Hive";
-import './Introduction.css';
 import Splash from "../Splash/Splash";
+import './Introduction.css';
+import { useInView } from "react-intersection-observer";
 
-export const Introduction = ({ lenis }) => {
+export const Introduction = ({ lenis, dynamic }) => {
   const p5Container = useRef(null);
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
   const introductionRef = useRef(null);
   const { color_mode } = useMainContext();
+  const p5Instance = useRef(null);
 
   useEffect(() => {
-    lenis.on('scroll', ({ scroll }) => {
+    const onScroll = ({ scroll }) => {
       if (scroll > 0) {
-        introductionRef.current.style.height = `calc(100vh - ${scroll}px)`;
-        introductionRef.current.style.transform = `perspective(1000px) rotateX(-${scroll / 10}deg)`;
+        introductionRef.current.style.height = `calc(100vh - ${(scroll * 1.5)}px)`;
       } else {
         introductionRef.current.style.height = '100vh';
-        introductionRef.current.style.transform = 'perspective(0px) rotateX(0deg)';
       }
-    });
-    const sketch = new p5((p) => Hive(p, color_mode), p5Container.current);
-    return () => {
-      sketch.remove();
+    };
+
+    if (dynamic) {
+      lenis.on('scroll', onScroll);
     }
-  }, [color_mode]);
+
+    p5Instance.current = new p5((p) => Hive(p, color_mode), p5Container.current);
+
+    return () => {
+      p5Instance.current.remove();
+      lenis.off('scroll', onScroll);
+    };
+  }, [color_mode, lenis, dynamic]);
+
+  useEffect(() => {
+    if (p5Instance.current) {
+      if (inView) {
+        p5Instance.current.loop();
+      } else {
+        p5Instance.current.noLoop();
+      }
+    }
+  }, [inView]);
 
   return (
     <header className="Introduction" id="home" ref={introductionRef}>
       <div
         className="Introduction__header"
-        ref={p5Container}
+        ref={node => {
+          ref(node);
+          p5Container.current = node;
+        }}
       >
         <p className="header__text border-after">
           Hey, thanks for checking out my portfolio!
@@ -41,4 +64,4 @@ export const Introduction = ({ lenis }) => {
       </div>
     </header>
   );
-}
+};

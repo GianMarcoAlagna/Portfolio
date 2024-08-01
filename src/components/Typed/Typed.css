@@ -1,0 +1,68 @@
+
+.text-container {
+  position: relative;
+  white-space: nowrap;
+  --animation-delay: 1s;
+  --duration: 2s;
+}
+
+.text-outline {
+  /* Comment out line 18 if you want the outline */
+  display: none;
+  position: absolute;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.text-fill {
+  overflow: hidden;
+  animation: width var(--duration) ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: var(--animation-delay);
+}
+
+.text-fill::after {
+  content: "";
+  height: 0.1rem;
+  background-color: var(--inverted-bg-color);
+  position: absolute;
+  display: block;
+  width: 25px;
+  animation: blink 1s linear infinite alternate,
+    position var(--duration) ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: var(--animation-delay);
+  bottom: 0;
+}
+
+@keyframes width {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes position {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 95%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0%;
+  }
+  25%,
+  50%,
+  75% {
+    opacity: 80%;
+  }
+}

@@ -9,6 +9,7 @@ import Inversion from "../P5/Inversion"
 import Symbiosys from "../P5/Symbiosys"
 import Fabric from "../P5/Fabric"
 import { useMainContext } from "../../context/MainContext"
+import { useInView } from "react-intersection-observer"
 
 export const Art = () => {
   const [artDimensions, setArtDimensions] = useState({ width: 500, height: 500 });
@@ -44,36 +45,50 @@ export const Art = () => {
 }
 
 const ArtPiece = ({ title, func, width, height }) => {
-  const ref = useRef(null)
+  const artRef = useRef(null)
+  const sketchRef = useRef(null)
+  const { ref, inView } = useInView({
+    threshold: 0
+  })
 
   useEffect(() => {
-    const sketch = new p5((p) => func(p, width, height), ref.current)
-    sketch.noLoop()
+    sketchRef.current = new p5((p) => func(p, width, height), artRef.current)
+    sketchRef.current.noLoop()
 
     function handleMouseIn() {
-      sketch.loop()
+      sketchRef.current.loop()
     }
     function handleMouseOut() {
-      sketch.noLoop()
+      sketchRef.current.noLoop()
     }
 
-    ref.current.addEventListener("mouseenter", handleMouseIn);
-    ref.current.addEventListener("mouseleave", handleMouseOut);
+    artRef.current.addEventListener("mouseenter", handleMouseIn);
+    artRef.current.addEventListener("mouseleave", handleMouseOut);
 
     return () => {
-      sketch.remove();
-      ref.current.removeEventListener("mouseenter", handleMouseIn);
-      ref.current.removeEventListener("mouseleave", handleMouseOut);
+      sketchRef.current.remove();
+      artRef.current.removeEventListener("mouseenter", handleMouseIn);
+      artRef.current.removeEventListener("mouseleave", handleMouseOut);
     }
   }, [func, width, height]); // Add width and height as dependencies
 
+  useEffect(() => {
+    if (sketchRef.current) {
+      if (inView) {
+        sketchRef.current.loop()
+      } else {
+        sketchRef.current.noLoop()
+      }
+    }
+  }, [inView])
+
   return (
-    <Card className="art">
+    <Card className="art" ref={ref}>
       <Card.Header>
         <h4 className="header">{title}</h4>
       </Card.Header>
       <Card.Body className="art__body">
-        <div ref={ref} className="p5-container" />
+        <div ref={artRef} className="p5-container" />
       </Card.Body>
     </Card>
   )

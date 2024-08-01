@@ -4,12 +4,13 @@ main {
   flex-direction: column;
   background-color: var(--bg-color);
   min-height: 100vh;
+  border-top: 2px solid var(--primary-color);
 }
 
 .main__section {
   width: 100%;
   display: flex;
-  margin: 0 auto;
+  margin: 25vh auto 0;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-color);
