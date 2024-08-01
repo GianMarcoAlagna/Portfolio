@@ -13,11 +13,12 @@ function App() {
     requestAnimationFrame(raf)
   }
   requestAnimationFrame(raf)
-  lenis.on('scroll', () => {
-    if (lenis.scroll >= lenis.limit - 2) {
-      lenis.scrollTo(0, { immediate: true });
-    }
-  })
+  // lenis.on('scroll', () => {
+  //   if (lenis.scroll >= lenis.limit - 5) {
+  //     lenis.scrollTo(0, { immediate: true });
+  //   }
+  // })
+  //! this shit gets weird on mobile, idk why exactly, I believe the way the mobile navbar works is fucking with the seamless scrollTo method from lenis
 
   return (
     <>
@@ -32,10 +33,10 @@ function App() {
           lenis={lenis}
         />
         <Footer />
-        <Introduction
+        {/* <Introduction
           lenis={lenis}
           dynamic={false}
-        />
+        /> hold off on this for now*/}
       </MainProvider>
     </>
   )
