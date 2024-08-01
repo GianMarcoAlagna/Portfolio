@@ -6,6 +6,7 @@
   width: 100%;
   background-color: var(--bg-color);
   overflow: hidden;
+  transition: height 0.5s ease-out;
 }
 
 .Introduction__header {

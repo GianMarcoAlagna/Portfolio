@@ -17,8 +17,9 @@ export const Introduction = ({ lenis, dynamic }) => {
 
   useEffect(() => {
     const onScroll = ({ scroll }) => {
+      // console.log(lenis.targetScroll);
       if (scroll > 0) {
-        introductionRef.current.style.height = `calc(100vh - ${(scroll * 1.5)}px)`;
+        introductionRef.current.style.height = `calc(100vh - ${(lenis.targetScroll * 1.5)}px)`;
       } else {
         introductionRef.current.style.height = '100vh';
       }
