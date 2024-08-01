@@ -18,12 +18,12 @@ function App() {
   requestAnimationFrame(raf)
 
   useEffect(() => {
-    const handleLoad = () => {
+    function handleLoad() {
       console.log('loaded');
       setLoading(false);
     }
-    
-    const handleDOMContentLoaded = () => {
+
+    function handleDOMContentLoaded() {
       console.log('DOM fully loaded and parsed');
       setLoading(false);
     };
