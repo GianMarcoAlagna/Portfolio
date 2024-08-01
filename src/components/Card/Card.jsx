@@ -1,10 +1,10 @@
 import { Reveal } from '../Reveal/Reveal';
 import './Card.css';
 
-export const Card = ({ children, className = "" }) => {
+export const Card = ({ children, className = "", innerRef }) => {
   return (
     <Reveal>
-      <div className={`card ${className}`.trim()}>
+      <div className={`card ${className}`.trim()} ref={innerRef}>
         {children}
       </div>
     </Reveal>

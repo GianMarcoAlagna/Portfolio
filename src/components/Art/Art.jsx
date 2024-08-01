@@ -81,7 +81,7 @@ const ArtPiece = ({ title, func, width, height }) => {
   }, [inView])
 
   return (
-    <Card className="art" ref={ref}>
+    <Card className="art" innerRef={ref}>
       <Card.Header>
         <h4 className="header">{title}</h4>
       </Card.Header>
