@@ -35,12 +35,12 @@ function App() {
   return (
     <>
       <MainProvider>
-        <Preloader loading={loading}>
+        {/* <Preloader loading={loading}> */}
           <Navbar />
           <Introduction lenis={lenis} dynamic={true} />
           <Main lenis={lenis} />
           <Footer />
-        </Preloader>
+        {/* </Preloader> */}
       </MainProvider>
     </>
   );
