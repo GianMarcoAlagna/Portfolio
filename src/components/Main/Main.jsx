@@ -1,10 +1,9 @@
-import { Introduction } from "../Introduction/Introduction";
 import { About } from "../About/About";
 import { Skills } from "../Skills/Skills";
 import { Projects } from "../Projects/Projects";
-import "./Main.css";
 import { Interests } from "../Interests/Interests";
 import { Art } from "../Art/Art";
+import "./Main.css";
 
 export const Main = () => {
   return (
