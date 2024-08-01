@@ -1,8 +1,7 @@
-
 .text-container {
   position: relative;
   white-space: nowrap;
-  --animation-delay: 1s;
+  --animation-delay: 0.5s;
   --duration: 2s;
 }
 

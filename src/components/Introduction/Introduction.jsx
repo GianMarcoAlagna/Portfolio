@@ -1,10 +1,10 @@
-import { useRef, useEffect } from "react";
 import p5 from "p5";
-import { useMainContext } from "../../context/MainContext";
 import Hive from "../P5/Hive";
 import Splash from "../Splash/Splash";
-import './Introduction.css';
+import { useRef, useEffect } from "react";
+import { useMainContext } from "../../context/MainContext";
 import { useInView } from "react-intersection-observer";
+import './Introduction.css';
 
 export const Introduction = ({ lenis, dynamic }) => {
   const p5Container = useRef(null);
@@ -14,6 +14,7 @@ export const Introduction = ({ lenis, dynamic }) => {
   const introductionRef = useRef(null);
   const { color_mode } = useMainContext();
   const p5Instance = useRef(null);
+  const { screen } = useMainContext();
 
   useEffect(() => {
     const onScroll = ({ scroll }) => {
@@ -25,7 +26,7 @@ export const Introduction = ({ lenis, dynamic }) => {
       }
     };
 
-    if (dynamic) {
+    if (dynamic && screen.width > 725) {
       lenis.on('scroll', onScroll);
     }
 
