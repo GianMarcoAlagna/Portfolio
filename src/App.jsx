@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const lenis = new Lenis();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   function raf(time) {
     lenis.raf(time)
@@ -28,8 +28,8 @@ function App() {
       setLoading(false);
     };
 
-    window.addEventListener('load', handleLoad);
-    document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+    // window.addEventListener('load', handleLoad);
+    // document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
     return () => {
       window.removeEventListener('load', handleLoad);
