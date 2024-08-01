@@ -18,11 +18,22 @@ function App() {
   requestAnimationFrame(raf)
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
+    const handleLoad = () => {
+      console.log('loaded');
+      setLoading(false);
+    }
+    
+    const handleDOMContentLoaded = () => {
+      console.log('DOM fully loaded and parsed');
+      setLoading(false);
+    };
+
     window.addEventListener('load', handleLoad);
+    document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
     return () => {
       window.removeEventListener('load', handleLoad);
+      document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
     }
   }, []);
 

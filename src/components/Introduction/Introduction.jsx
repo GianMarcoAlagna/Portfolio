@@ -36,7 +36,7 @@ export const Introduction = ({ lenis, dynamic }) => {
       p5Instance.current.remove();
       lenis.off('scroll', onScroll);
     };
-  }, [color_mode, lenis, dynamic]);
+  }, [color_mode, lenis, dynamic, screen.width]);
 
   useEffect(() => {
     if (p5Instance.current) {
