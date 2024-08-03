@@ -21,6 +21,4 @@ This is the github repo for my personal website. The website is a portfolio of m
   </a>
 </p>
 
-### 0.5
-
-Beta version of the website.
+### 1.0
