@@ -4,7 +4,7 @@ main {
   flex-direction: column;
   background-color: var(--bg-color);
   min-height: 100vh;
-  border-top: 2px solid var(--primary-color);
+  border-top: 2px solid var(--inverted-bg-color);
 }
 
 .main__section {

@@ -48,21 +48,16 @@
   font-family: "Satisfy", cursive;
   font-size: 2rem;
   text-align: center;
-  border: 1px solid rgba(var(--primary-color-rgb), 1);
+  border: 2px solid rgba(var(--primary-color-rgb), 1);
   padding: 0.2rem;
   border-radius: 1rem;
   background-color: rgba(var(--bg-color-rgb), 0.5);
   min-height: 3rem;
   min-width: 8rem;
-  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
-  &:hover {
-    box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
-    transform: translate(0.15rem, -0.15rem);
-  }
+  position: relative;
   .navbar__header__text {
     background-image: linear-gradient(
       45deg,
-      rgba(var(--primary-color-rgb), 1),
       rgba(var(--secondary-color-rgb), 1)
     );
     background-size: 100%;
@@ -81,12 +76,7 @@
   gap: 0.1rem;
   width: fit-content;
   padding: 0.5rem;
-  /* box-shadow: -0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.75); */
   margin: 0 auto;
-  &:hover {
-    box-shadow: -0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.75);
-    transform: translate(0.15rem, -0.15rem);
-  }
   .navbar__link {
     position: relative;
     color: var(--text-color);
@@ -117,13 +107,17 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 3px;
+      height: 7px;
       opacity: 0;
       transition: 0.5s;
       background: linear-gradient(
-          45deg,
-          rgba(var(--primary-color-rgb), 1),
-          rgba(var(--secondary-color-rgb), 1)
+          0deg,
+          rgba(255, 50, 50, 1) 0%,
+          rgba(255, 50, 50, 1) 33.33%,
+          rgba(90, 255, 90, 1) 33.33%,
+          rgba(90, 255, 90, 1) 66.66%,
+          rgba(25, 120, 255, 1) 66.66%,
+          rgba(25, 120, 255, 1) 100%
         )
         center / 0% 100% no-repeat;
     }
@@ -135,7 +129,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 3px;
+        height: 6px;
         opacity: 1;
         background-size: 100% 100%;
       }

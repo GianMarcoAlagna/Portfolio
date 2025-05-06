@@ -15,12 +15,12 @@
 }
 
 .state-button-line {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 20px;
   height: 85px;
   border-radius: 20px;
-  transition: all 0.25s ease-in-out;
-  box-shadow: 0 0 10px var(--primary-color);
+  transition: all 0.1s linear;
+  box-shadow: 0 0 10px black;
 }
 
 .state-button-container {

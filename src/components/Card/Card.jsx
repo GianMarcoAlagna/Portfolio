@@ -1,5 +1,5 @@
-import { Reveal } from '../Reveal/Reveal';
-import './Card.css';
+import { Reveal } from "../Reveal/Reveal";
+import "./Card.css";
 
 export const Card = ({ children, className = "", innerRef }) => {
   return (
@@ -9,7 +9,7 @@ export const Card = ({ children, className = "", innerRef }) => {
       </div>
     </Reveal>
   );
-}
+};
 
 Card.Header = ({ children, className = "" }) => {
   return (
@@ -17,28 +17,24 @@ Card.Header = ({ children, className = "" }) => {
       {children}
     </header>
   );
-}
+};
 
 Card.Image = ({ src, alt, className = "" }) => {
   return (
     <img src={src} alt={alt} className={`card__image ${className}`.trim()} />
   );
-}
+};
 
 Card.Body = ({ children, className = "" }) => {
   return (
-    <section className={`card__body ${className}`.trim()}>
-      {children}
-    </section>
+    <section className={`card__body ${className}`.trim()}>{children}</section>
   );
-}
+};
 
 Card.Footer = ({ children, className = "" }) => {
   return (
-    <footer className={`card__footer ${className}`.trim()}>
-      {children}
-    </footer>
+    <footer className={`card__footer ${className}`.trim()}>{children}</footer>
   );
-}
+};
 
 export default Card;

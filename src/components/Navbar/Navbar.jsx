@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { ColorMode } from './ColorMode';
-import { useMainContext } from '../../context/MainContext';
-import Links from '../Util/Links.json';
-import { Hamburger } from './Hamburger';
-import './Navbar.css';
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ColorMode } from "./ColorMode";
+import { useMainContext } from "../../context/MainContext";
+import Links from "../Util/Links.json";
+import { Hamburger } from "./Hamburger";
+import "./Navbar.css";
 
 export const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -15,7 +15,7 @@ export const Navbar = () => {
   function scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
 
@@ -31,18 +31,15 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar border-after${drawerOpen ? ' expanded' : ''}`} ref={navRef}>
-        <div
-          className='navbar__left'
-        >
-          {
-            screen.width < 1450 &&
+      <nav className={`navbar ${drawerOpen ? " expanded" : ""}`} ref={navRef}>
+        <div className="navbar__left">
+          {screen.width < 1450 && (
             <Hamburger
               className="navbar__hamburger"
               onClick={toggleDrawer}
               checked={drawerOpen}
             />
-          }
+          )}
           <header className="navbar__header">
             <span
               className="navbar__header__text"
@@ -53,9 +50,7 @@ export const Navbar = () => {
             </span>
           </header>
         </div>
-        <div
-          className="navbar__center"
-        >
+        <div className="navbar__center">
           <header className="navbar__header center">
             <span
               className="navbar__header__text"
@@ -65,33 +60,27 @@ export const Navbar = () => {
               {screen.width > 836 ? "Gian-Marco Alagna" : "GMA"}
             </span>
           </header>
-          {
-            screen.width >= 1450 &&
-            <NavLinks links={links} />
-          }
+          {screen.width >= 1450 && <NavLinks links={links} />}
         </div>
-        <div
-          className="navbar__right"
-        >
+        <div className="navbar__right">
           <ColorMode />
         </div>
-        {
-          screen.width < 1450 &&
+        {screen.width < 1450 && (
           <div
             className="drawer"
             ref={drawerRef}
-          // style={{
-          //   display: drawerOpen ? 'block' : 'none'
-          // }}
+            // style={{
+            //   display: drawerOpen ? 'block' : 'none'
+            // }}
           >
             <NavLinks links={links.slice(0, links.length / 2)} />
             <NavLinks links={links.slice(links.length / 2, links.length)} />
           </div>
-        }
+        )}
       </nav>
     </>
-  )
-}
+  );
+};
 
 const NavLinks = ({ links }) => {
   const linksMap = links.map(([link, url], index) => {
@@ -103,25 +92,27 @@ const NavLinks = ({ links }) => {
         leftEdge={index === 0}
         rightEdge={index === links.length - 1}
       />
-    )
+    );
   });
-  return (
-    <div className="navbar__links">
-      {linksMap}
-    </div>
-  )
-}
+  return <div className="navbar__links">{linksMap}</div>;
+};
 
 const NavLink = ({ link, url, leftEdge, rightEdge }) => {
   return (
     <a
       href={url}
       key={link}
-      className={leftEdge ? "navbar__link left-edge" : rightEdge ? "navbar__link right-edge" : "navbar__link"}
+      className={
+        leftEdge
+          ? "navbar__link left-edge"
+          : rightEdge
+          ? "navbar__link right-edge"
+          : "navbar__link"
+      }
       target="_blank"
       rel="noopener noreferrer"
     >
       {link}
     </a>
-  )
-}
+  );
+};
