@@ -1,7 +1,7 @@
 import { Contact } from "../Contact/Contact";
 import { Resume } from "../Resume/Resume";
 import { Reveal } from "../Reveal/Reveal";
-import { FaArrowUp } from "react-icons/fa";
+// import { FaArrowUp } from "react-icons/fa";
 import "./Footer.css";
 
 export const Footer = () => {
@@ -12,7 +12,7 @@ export const Footer = () => {
           <Resume />
           <Contact />
         </div>
-        <div>
+        {/* <div>
           <p>
             Entirely custom made with ❤️ by <a href="https://github.com/GianMarcoAlagna"><span style={{ textDecoration: "underline" }}>Gian Marco Alagna</span></a>
             <br />Found a bug? Shoot me an <a href="mailto:marcoalagna1@gmail.com"><span style={{ textDecoration: "underline" }}>email</span></a>
@@ -21,8 +21,8 @@ export const Footer = () => {
           <p>
             <FaArrowUp /> Tech Stack Icons by <a href="https://skillicons.dev/"><span style={{ textDecoration: "underline" }}>Skill Icons</span></a> <FaArrowUp />
           </p>
-        </div>
+        </div> */}
       </Reveal>
     </footer>
   );
-}
+};
