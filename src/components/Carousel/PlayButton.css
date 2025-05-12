@@ -1,6 +1,6 @@
 .state-button {
-  width: 150px;
-  height: 150px;
+  width: 144px;
+  height: 144px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
   overflow: hidden;
   scale: 0.5;
   position: absolute;
-  bottom: -2.5rem;
+  bottom: -3rem;
   left: 50%;
   transform: translateX(-115%);
 }

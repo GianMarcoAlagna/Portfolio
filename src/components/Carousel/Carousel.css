@@ -1,5 +1,5 @@
 .carousel-container {
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -42,11 +42,11 @@
     z-index: 10;
   }
   .carousel__item {
-    width: 11rem;
+    width: 15rem;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    margin: 0 0.5rem;
+    gap: 1rem;
     transition: transform 0.5s;
     &:hover {
       filter: drop-shadow(0 0 12px rgba(var(--primary-color-rgb), 1));
@@ -55,11 +55,9 @@
   }
   .carousel__slider {
     display: flex;
-    white-space: nowrap;
+    flex-wrap: nowrap;
     width: fit-content;
-    animation: slide 12s linear infinite;
-    padding: 12px 0;
-    border-radius: 1rem;
+    animation: slide 10s linear infinite;
     &:hover {
       animation-play-state: paused;
     }
@@ -81,6 +79,6 @@
 
 @keyframes slide {
   to {
-    transform: translateX(calc(-50%));
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }

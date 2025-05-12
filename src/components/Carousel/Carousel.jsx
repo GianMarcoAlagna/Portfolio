@@ -4,14 +4,8 @@ import { PlayButton } from "./PlayButton";
 export const Carousel = ({ items }) => {
   const carouselItems = items.map((item, index) => (
     <Carousel.Item key={index}>
-      <img
-        src={item.src}
-        alt={item.skill}
-        className="carousel__image"
-      />
-      <span>
-        {item.skill}
-      </span>
+      <img src={item.src} alt={item.skill} className="carousel__image" />
+      <span>{item.skill}</span>
     </Carousel.Item>
   ));
   return (
@@ -25,28 +19,16 @@ export const Carousel = ({ items }) => {
       </div>
     </>
   );
-}
+};
 
 Carousel.Header = ({ children }) => {
-  return (
-    <div className="carousel__header">
-      {children}
-    </div>
-  );
-}
+  return <div className="carousel__header">{children}</div>;
+};
 
 Carousel.Slider = ({ children }) => {
-  return (
-    <div className="carousel__slider">
-      {children}
-    </div>
-  );
-}
+  return <div className="carousel__slider">{children}</div>;
+};
 
 Carousel.Item = ({ children }) => {
-  return (
-    <div className="carousel__item">
-      {children}
-    </div>
-  );
-}
+  return <div className="carousel__item">{children}</div>;
+};
