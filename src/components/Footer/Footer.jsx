@@ -12,16 +12,6 @@ export const Footer = () => {
           <Resume />
           <Contact />
         </div>
-        {/* <div>
-          <p>
-            Entirely custom made with ❤️ by <a href="https://github.com/GianMarcoAlagna"><span style={{ textDecoration: "underline" }}>Gian Marco Alagna</span></a>
-            <br />Found a bug? Shoot me an <a href="mailto:marcoalagna1@gmail.com"><span style={{ textDecoration: "underline" }}>email</span></a>
-          </p>
-          <img src="https://skillicons.dev/icons?perline=6&i=js,react,html,css,p5js,vite,vscode,git,github,aws,postgresql" alt="Tech Stack" />
-          <p>
-            <FaArrowUp /> Tech Stack Icons by <a href="https://skillicons.dev/"><span style={{ textDecoration: "underline" }}>Skill Icons</span></a> <FaArrowUp />
-          </p>
-        </div> */}
       </Reveal>
     </footer>
   );

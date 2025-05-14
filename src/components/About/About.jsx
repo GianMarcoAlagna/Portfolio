@@ -6,32 +6,30 @@ export const About = () => {
   return (
     <Card className="About">
       <Card.Header>
-        <h2 className="header">
-          About Me
-        </h2>
+        <h2 className="header">About Me</h2>
       </Card.Header>
-        <ManualCarousel images={["profile1.jpg", "profile2.jpg", "profile3.jpg"]} imageClass={'profile-image'} />
+      <ManualCarousel
+        images={["profile1.jpg"]}
+        imageClass={"profile-image"}
+        noScroll
+      />
       <Card.Body>
         I'm a full stack developer based in the United States, Texas. <br />
-        I have a passion for web development and love creating beautiful and memorable applications. <br />
-        I'm always looking for new opportunities to learn and grow as a developer. <br />
+        I have a passion for web development and love creating beautiful and
+        memorable applications. <br />
+        I'm always looking for new opportunities to learn and grow as a
+        developer. <br />
       </Card.Body>
       <Card.Footer>
         My day to day stack includes: <br />
-        <ul
-          className="grid"
-        >
-          {Stack.map(stack => (
-            <li
-              key={stack}
-              className="grid__list-item"
-            >
+        <ul className="grid">
+          {Stack.map((stack) => (
+            <li key={stack} className="grid__list-item">
               {stack}
             </li>
-          ))
-          }
+          ))}
         </ul>
       </Card.Footer>
     </Card>
   );
-}
+};

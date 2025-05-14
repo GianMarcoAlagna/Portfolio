@@ -2,7 +2,13 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./ManualCarousel.css";
 
-export const ManualCarousel = ({ images, width, height, imageClass }) => {
+export const ManualCarousel = ({
+  images,
+  width,
+  height,
+  imageClass,
+  noScroll,
+}) => {
   const [currIndex, setCurrIndex] = useState(0);
   if (!images || images.length === 0) {
     return null;
@@ -19,7 +25,7 @@ export const ManualCarousel = ({ images, width, height, imageClass }) => {
   }
 
   return (
-    <div className='carouselContainer'>
+    <div className="carouselContainer">
       <div className="carouselOuter">
         <div className="carouselInner">
           {images.map((image, index) => (
@@ -27,27 +33,31 @@ export const ManualCarousel = ({ images, width, height, imageClass }) => {
               <img
                 src={image}
                 alt={`carousel image ${index}`}
-                className={`${index === currIndex ? 'active' : 'inactive'}${imageClass ? ' ' + imageClass : ''}`}
+                className={`${index === currIndex ? "active" : "inactive"}${
+                  imageClass ? " " + imageClass : ""
+                }`}
                 style={{ width, height }}
               />
             </div>
           ))}
         </div>
       </div>
-      <div className='navigationButtons'>
-        <button
-          className='carouselNavButton Left'
-          onClick={handleNavClickLeft}
-        >
-          <FaArrowLeft />
-        </button>
-        <button
-          className='carouselNavButton Right'
-          onClick={handleNavClickRight}
-        >
-          <FaArrowRight />
-        </button>
-      </div>
+      {!noScroll && (
+        <div className="navigationButtons">
+          <button
+            className="carouselNavButton Left"
+            onClick={handleNavClickLeft}
+          >
+            <FaArrowLeft />
+          </button>
+          <button
+            className="carouselNavButton Right"
+            onClick={handleNavClickRight}
+          >
+            <FaArrowRight />
+          </button>
+        </div>
+      )}
     </div>
   );
-}
+};
