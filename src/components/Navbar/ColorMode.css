@@ -4,6 +4,7 @@
   width: 3rem;
   height: 3rem;
   perspective: 1000px;
+  margin-right: 1rem;
   overflow: visible;
   /* margin-left: auto; */
 }

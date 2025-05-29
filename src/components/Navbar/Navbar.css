@@ -12,7 +12,7 @@
   width: 100%;
   overflow: hidden;
   flex-wrap: wrap;
-  padding: 1rem 0.5rem;
+  padding-left: 1rem;
   height: 5.5rem;
   &.expanded {
     height: 18rem;
@@ -45,7 +45,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Satisfy", cursive;
   font-size: 2rem;
   text-align: center;
   border: 2px solid rgba(var(--primary-color-rgb), 1);

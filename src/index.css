@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -111,9 +112,9 @@ body:has(.navbar > .navbar__right > #color-mode > #color-mode-input:checked) {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Cascadia Code", sans-serif;
   /* font-optical-sizing: auto; */
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   background-color: var(--bg-color);
   color: var(--text-color);
