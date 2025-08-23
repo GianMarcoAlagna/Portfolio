@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./Modal.css";
 
 export const Modal = ({ children, onClose, isOpen = false }) => {
@@ -9,7 +9,7 @@ export const Modal = ({ children, onClose, isOpen = false }) => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
-  const render = (!children || !isOpen)
+  const render = !children || !isOpen;
 
   function handleEscape(event) {
     if (event.key === "Escape") {
@@ -23,30 +23,33 @@ export const Modal = ({ children, onClose, isOpen = false }) => {
     }
   }
 
-  return (
-    render ? null :
-      createPortal(
-        <div className={`modal ${isOpen ? "modal--open" : ""}`} onClick={overlayClick}>
+  return render
+    ? null
+    : createPortal(
+        <div
+          className={`modal ${isOpen ? "modal--open" : ""}`}
+          onClick={overlayClick}
+        >
           <div className="modal__content" data-lenis-prevent>
             {children}
           </div>
         </div>,
         document.body
-      ));
-}
+      );
+};
 
 Modal.Header = ({ children }) => {
   return <header className="modal__header">{children}</header>;
-}
+};
 
 Modal.Body = ({ children }) => {
   return <section className="modal__body">{children}</section>;
-}
+};
 
 Modal.Footer = ({ children }) => {
   return <footer className="modal__footer">{children}</footer>;
-}
+};
 
 Modal.Image = ({ children }) => {
   return <section className="modal__image">{children}</section>;
-}
+};

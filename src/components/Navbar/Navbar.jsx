@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRef } from "react";
 import { ColorMode } from "./ColorMode";
 import { useMainContext } from "../../context/MainContext";
 import Links from "../Util/Links.json";
@@ -6,8 +6,6 @@ import { Hamburger } from "./Hamburger";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const drawerRef = useRef(null);
   const navRef = useRef(null);
   const links = Object.entries(Links);
   const { screen } = useMainContext();
@@ -19,27 +17,11 @@ export const Navbar = () => {
     });
   }
 
-  function toggleDrawer() {
-    setDrawerOpen(!drawerOpen);
-  }
-
-  useEffect(() => {
-    if (screen.width >= 1450) {
-      setDrawerOpen(false);
-    }
-  }, [screen.width]);
-
   return (
     <>
-      <nav className={`navbar ${drawerOpen ? " expanded" : ""}`} ref={navRef}>
+      <nav className={`navbar`} ref={navRef}>
         <div className="navbar__left">
-          {screen.width < 1450 && (
-            <Hamburger
-              className="navbar__hamburger"
-              onClick={toggleDrawer}
-              checked={drawerOpen}
-            />
-          )}
+          {screen.width < 1450 && <Hamburger className="navbar__hamburger" />}
           <header className="navbar__header">
             <span
               className="navbar__header__text"
@@ -65,18 +47,6 @@ export const Navbar = () => {
         <div className="navbar__right">
           <ColorMode />
         </div>
-        {screen.width < 1450 && (
-          <div
-            className="drawer"
-            ref={drawerRef}
-            // style={{
-            //   display: drawerOpen ? 'block' : 'none'
-            // }}
-          >
-            <NavLinks links={links.slice(0, links.length / 2)} />
-            <NavLinks links={links.slice(links.length / 2, links.length)} />
-          </div>
-        )}
       </nav>
     </>
   );

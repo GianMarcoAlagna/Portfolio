@@ -4,7 +4,22 @@ main {
   flex-direction: column;
   background-color: var(--bg-color);
   min-height: 100vh;
-  border-top: 2px solid var(--inverted-bg-color);
+  perspective: 2000px; /* gives the 3D depth */
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s ease-in-out;
+  /* animation: flip-over 1s ease-in-out; */
+}
+
+@keyframes flip-over {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(90deg);
+  }
 }
 
 .main__section {

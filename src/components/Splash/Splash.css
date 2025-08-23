@@ -1,30 +1,98 @@
-.splash {
+.splash-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
   position: relative;
-  top: -10%;
-  background-color: rgba(var(--bg-color-rgb), 0.5);
-  border-radius: 1rem;
-  padding: 1rem;
-  backdrop-filter: blur(10px);
-  max-height: 100%;
-  border: 2px solid rgba(var(--primary-color-rgb), 1);
-  font-size: 2rem;
-  color: var(--text-color);
-  /* account for mobile font size */
-  @media screen and (max-width: 768px) {
-    padding: 0.5rem;
+  padding: 3rem;
+  transition: all 0.3s ease;
+
+  &:active {
+    color: transparent;
+    transform: translateY(3rem) scale(0.75);
   }
 }
 
+.splash {
+  /* Make the inside text not selectable */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+
+  overflow: hidden;
+  position: relative;
+  max-height: 14rem;
+  width: 35rem;
+  /* height: 14rem; */
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: max-height 0.3s ease-in-out, width 0.3s ease-in-out,
+    box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  border-radius: 1rem;
+
+  padding: 1rem;
+  margin: 2rem;
+  backdrop-filter: blur(10px);
+  font-size: 2rem;
+
+  color: var(--text-color);
+  box-shadow: 2px -10px 30px 0px var(--primary-color) inset;
+  cursor: pointer;
+
+  /* white-space: nowrap; */
+  flex-wrap: nowrap;
+  transform-origin: top center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem;
+  }
+  &:hover {
+    box-shadow: 2px -10px 10px 0px var(--primary-color) inset;
+  }
+  &:active {
+    box-shadow: 2px -5px 5px 0px var(--primary-color) inset;
+  }
+}
 .splash__title {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
 }
-
 .splash__description {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.splash__text {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: var(--text-color);
+  margin-top: 8rem;
+  transition: margin-top 0.3s ease;
+}
+.window-anim-forward {
+  width: 40rem;
+  max-height: 30rem;
+  .splash__text {
+    margin-top: 2rem;
+    animation: hover 3s ease-in-out infinite;
+  }
+}
+@keyframes hover {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

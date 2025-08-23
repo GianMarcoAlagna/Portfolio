@@ -1,42 +1,46 @@
-import p5 from "p5";
-import Hive from "../P5/Hive";
 import Splash from "../Splash/Splash";
-import { useRef, useEffect } from "react";
-import { useMainContext } from "../../context/MainContext";
-import { useInView } from "react-intersection-observer";
-import './Introduction.css';
+import Stars from "../P5/Stars";
+import p5 from "p5";
+import Links from "../Util/Links.json";
 
-export const Introduction = ({ lenis, dynamic }) => {
+import { useRef, useEffect, useState } from "react";
+import { ColorMode } from "../Navbar/ColorMode";
+import { useInView } from "react-intersection-observer";
+
+import "./Introduction.css";
+
+export const Introduction = () => {
+  const { ref: inViewRef, inView } = useInView({ threshold: 0 });
+  const textRef = useRef(null);
+  const heroRef = useRef(null);
   const p5Container = useRef(null);
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
-  const introductionRef = useRef(null);
-  const { color_mode } = useMainContext();
   const p5Instance = useRef(null);
-  const { screen } = useMainContext();
+  const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    const onScroll = ({ scroll }) => {
-      // console.log(lenis.targetScroll);
-      if (scroll > 0) {
-        introductionRef.current.style.height = `calc(100vh - ${(lenis.targetScroll * 1.5)}px)`;
-      } else {
-        introductionRef.current.style.height = '100vh';
-      }
-    };
+    // get the height of the text element + window height
+    if (textRef.current) {
+      const textHeight = textRef.current.offsetHeight;
+      setCanvasHeight(textHeight + window.innerHeight);
+    }
+  }, []);
 
-    if (dynamic && screen.width > 725) {
-      lenis.on('scroll', onScroll);
+  useEffect(() => {
+    if (p5Container.current && !p5Instance.current) {
+      // Mount sketch
+      p5Instance.current = new p5(
+        (p) => Stars(p, window.innerWidth, window.innerHeight),
+        p5Container.current
+      );
     }
 
-    p5Instance.current = new p5((p) => Hive(p, color_mode), p5Container.current);
-
     return () => {
-      p5Instance.current.remove();
-      lenis.off('scroll', onScroll);
+      if (p5Instance.current) {
+        p5Instance.current.remove();
+        p5Instance.current = null;
+      }
     };
-  }, [color_mode, lenis, dynamic, screen.width]);
+  }, [canvasHeight]);
 
   useEffect(() => {
     if (p5Instance.current) {
@@ -48,22 +52,43 @@ export const Introduction = ({ lenis, dynamic }) => {
     }
   }, [inView]);
 
+  const links = [];
+  Links.forEach((link) => {
+    links.push(
+      <a key={link.name} href={link.link} target="_blank" rel="noreferrer">
+        <button className="hero-button">{link.name}</button>
+      </a>
+    );
+  });
+
   return (
-    <header className="Introduction" id="home" ref={introductionRef}>
+    <hero className="hero" id="home" ref={heroRef}>
       <div
-        className="Introduction__header"
-        ref={node => {
-          ref(node);
-          p5Container.current = node;
+        className="hero-header"
+        ref={(node) => {
+          inViewRef(node); // hook ref
+          p5Container.current = node; // p5 canvas target
         }}
       >
-        <p className="header__text border-after">
-          Hey, thanks for checking out my portfolio!
+        <p ref={textRef} className="hero-text border-bottom">
+          Welcome
         </p>
-        <div className="Introduction__content">
-          <Splash />
+        <div className="hero-content">
+          <div className="hero-left">
+            <div className="hero-info">
+              <div className="hero-side-buttons">
+                {links}
+                <ColorMode />
+              </div>
+            </div>
+          </div>
+          <div className="hero-center">
+            <Splash />
+          </div>
+          <div className="hero-right"></div>
         </div>
+        <div className="p5-wrapper" />
       </div>
-    </header>
+    </hero>
   );
 };

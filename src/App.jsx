@@ -1,34 +1,23 @@
-import { useEffect, useState } from 'react';
-import { Main, Navbar } from './components';
-import { MainProvider } from './context/MainContext';
-import { Footer } from "./components/Footer/Footer";
-import { Introduction } from './components';
-import { Preloader } from './components/Preloader/Preloader';
-import Lenis from '@studio-freight/lenis';
-import './App.css';
+import { useEffect, useState } from "react";
+import { MainProvider } from "./context/MainContext";
+import { Main } from "./components";
+import { Preloader } from "./components/Preloader/Preloader";
+import "./App.css";
 
 function App() {
-  const lenis = new Lenis();
   const [loading, setLoading] = useState(true);
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 
   useEffect(() => {
     const handleLoad = () => {
-      console.log('loaded');
+      console.log("loaded");
       setLoading(false);
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       handleLoad();
     } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
     }
   }, []);
 
@@ -36,10 +25,7 @@ function App() {
     <>
       <MainProvider>
         <Preloader loading={loading}>
-          <Navbar />
-          <Introduction lenis={lenis} dynamic={true} />
-          <Main lenis={lenis} />
-          <Footer />
+          <Main />
         </Preloader>
       </MainProvider>
     </>

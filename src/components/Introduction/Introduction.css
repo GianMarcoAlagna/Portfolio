@@ -1,4 +1,4 @@
-.Introduction {
+.hero {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,15 @@
   transition: height 0.5s ease-out;
 }
 
-.Introduction__header {
+.hero-header {
   width: 100%;
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* This might be causing scroll problems */
   flex-direction: column;
 }
 
-.Introduction__content {
+.hero-content {
   display: flex;
   z-index: 1;
   align-items: center;
@@ -37,15 +37,78 @@
   }
 }
 
-.Introduction__link {
+.hero-left,
+.hero-center,
+.hero-right {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero-info {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-side-buttons {
+  margin-top: auto;
+  margin-right: auto;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.hero-link {
   display: flex;
   gap: 0.1rem;
   align-items: center;
   color: var(--text-color);
 }
+.hero-button {
+  height: 3.2rem;
+  width: 3.2rem;
+  /* clip-path: path(
+    "M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25"
+  ); */
+  border: none;
+  border-radius: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px -3px 15px 0px var(--primary-color) inset;
+  color: var(--primary-color);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0px);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  margin: 0.3rem 0;
 
-#home {
-  height: calc(100vh - 5.5rem);
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: 0px -6px 20px 0px var(--primary-color) inset;
+    border-left: 1px solid var(--primary-color);
+
+    &::after {
+      content: "<-";
+      position: absolute;
+      width: 0.2rem;
+      height: 1.5rem;
+      /* background-color: var(--primary-color); */
+      right: -0.5rem;
+      color: white;
+      animation: oscillate 0.5s ease infinite alternate;
+    }
+  }
+
+  &:active {
+    transform: translateX(-10px);
+    box-shadow: 0px -3px 15px 0px var(--primary-color) inset;
+  }
 }
 
 .p5Canvas {
@@ -55,7 +118,7 @@
   height: 100vh;
 }
 
-.header__text {
+.hero-text {
   text-align: center;
   margin: 0;
   padding: 1rem;
@@ -63,12 +126,12 @@
   font-size: 2rem;
   width: 100%;
   backdrop-filter: blur(10px);
-  background-color: rgb(var(--bg-color-rgb), 0.5);
+  background-color: rgb(var(--bg-color-rgb), 0.35);
   animation: reveal-down 1s ease;
   z-index: 999;
 }
 
-.header__info {
+.hero-info {
   display: flex;
 }
 
@@ -78,5 +141,16 @@
   }
   100% {
     background-size: 100% 100%;
+  }
+}
+
+@keyframes oscillate {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }

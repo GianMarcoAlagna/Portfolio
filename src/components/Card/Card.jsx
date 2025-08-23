@@ -13,9 +13,7 @@ export const Card = ({ children, className = "", innerRef }) => {
 
 Card.Header = ({ children, className = "" }) => {
   return (
-    <header className={`card__header border-after ${className}`.trim()}>
-      {children}
-    </header>
+    <header className={`card__header ${className}`.trim()}>{children}</header>
   );
 };
 
