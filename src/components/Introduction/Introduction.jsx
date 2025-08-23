@@ -55,7 +55,13 @@ export const Introduction = () => {
   const links = [];
   Links.forEach((link) => {
     links.push(
-      <a key={link.name} href={link.link} target="_blank" rel="noreferrer">
+      <a
+        className="hero-link"
+        key={link.name}
+        href={link.link}
+        target="_blank"
+        rel="noreferrer"
+      >
         <button className="hero-button">{link.name}</button>
       </a>
     );
