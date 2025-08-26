@@ -23,7 +23,7 @@
 .text-fill::after {
   content: "";
   height: 0.1rem;
-  background-color: var(--inverted-bg-color);
+  background-color: var(--primary-color);
   position: absolute;
   display: block;
   width: 25px;

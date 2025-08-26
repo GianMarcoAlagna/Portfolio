@@ -1,32 +1,29 @@
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* width: 100%; */
   background-color: var(--bg-color);
-  overflow: hidden;
-  transition: height 0.5s ease-out;
+  /* overflow: hidden; */
+  /* transition: height 0.5s ease-out; */
 }
 
 .hero-header {
   width: 100%;
   display: flex;
   align-items: center;
-  height: 100vh; /* This might be causing scroll problems */
   flex-direction: column;
 }
 
 .hero-content {
   display: flex;
-  z-index: 1;
+  width: 100%;
+  height: 100vh;
   align-items: center;
   color: var(--text-color);
-  width: 100%;
-  height: fit-content;
   position: relative;
   justify-content: center;
-  height: 100%;
 
   .Introduction__paragraph {
     font-size: 1.5rem;
@@ -37,88 +34,72 @@
   }
 }
 
-.hero-left,
-.hero-center,
-.hero-right {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.hero-info {
-  height: 100%;
-  width: 100%;
-}
-
-.hero-side-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: auto;
-  margin-right: auto;
-  padding: 1rem;
-  flex-direction: column;
-}
-
 .hero-link {
+  position: relative;
   display: flex;
-  height: 3.8rem;
-  width: 3.8rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
-  &:hover {
-    transform: translateX(5px);
-    box-shadow: -4px 0px 4px 0px white;
-  }
-
-  &:active {
-    transform: translateX(-10px);
-  }
-}
-.hero-button {
-  height: 3.8rem;
-  width: 3.8rem;
-  /* clip-path: path(
-    "M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25"
-  ); */
-  border: none;
-  border-radius: 100%;
-  background-color: rgba(var(--primary-color-rgb), 0.6);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px -3px 15px 0px var(--primary-color) inset;
-  color: white;
-  font-size: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(0px);
-  transition: all 0.2s ease;
-  cursor: pointer;
 
   &:hover {
     box-shadow: 0px -6px 20px 0px var(--primary-color) inset;
-    border-left: 1px solid var(--primary-color);
+    transform: translateY(5px) scale(0.95);
 
     &::after {
+      display: flex;
+      justify-content: right;
       content: "<-";
       position: absolute;
-      width: 0.2rem;
-      height: 1.5rem;
+      width: 1.3rem;
       background-color: transparent;
-      right: -0.5rem;
-      color: white;
+      right: -2rem;
+      top: 1.75rem;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      font-weight: bold;
+
       animation: oscillate 0.5s ease infinite alternate;
     }
   }
 
-  &:active {
-    box-shadow: 0px -3px 15px 0px var(--primary-color) inset;
+  @media screen and (max-width: 900px) {
+    &:hover {
+      box-shadow: 0px -6px 20px 0px var(--primary-color) inset;
+      transform: translateY(5px) scale(0.95);
+
+      &::after {
+        display: none;
+      }
+    }
   }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  align-items: center;
+}
+
+.hero-button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 100%;
+  background-color: rgba(var(--primary-color-rgb), 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px -3px 12px 0px var(--primary-color) inset;
+  color: var(--text-color);
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .p5Canvas {
@@ -126,19 +107,6 @@
   left: 0;
   top: 0;
   height: 100vh;
-}
-
-.hero-text {
-  text-align: center;
-  margin: 0;
-  padding: 1rem;
-  position: relative;
-  font-size: 2rem;
-  width: 100%;
-  backdrop-filter: blur(10px);
-  background-color: rgb(var(--bg-color-rgb), 0.35);
-  animation: reveal-down 1s ease;
-  z-index: 999;
 }
 
 .hero-info {

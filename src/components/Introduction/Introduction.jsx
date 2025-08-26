@@ -1,35 +1,31 @@
 import Splash from "../Splash/Splash";
 import Stars from "../P5/Stars";
-import p5 from "p5";
+import Grid_Wave from "../P5/Grid_Wave";
 import Links from "../Util/Links.json";
+import * as FaIcons from "react-icons/fa";
+import * as IoIcons from "react-icons/io5";
+import * as SiIcons from "react-icons/si";
+import * as MdIcons from "react-icons/md";
+import p5 from "p5";
 
-import { useRef, useEffect, useState } from "react";
+import { useMainContext } from "../../context/MainContext";
+import { useRef, useEffect } from "react";
 import { ColorMode } from "../Navbar/ColorMode";
-import { useInView } from "react-intersection-observer";
 
 import "./Introduction.css";
 
 export const Introduction = () => {
-  const { ref: inViewRef, inView } = useInView({ threshold: 0 });
-  const textRef = useRef(null);
-  const heroRef = useRef(null);
   const p5Container = useRef(null);
   const p5Instance = useRef(null);
-  const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    // get the height of the text element + window height
-    if (textRef.current) {
-      const textHeight = textRef.current.offsetHeight;
-      setCanvasHeight(textHeight + window.innerHeight);
-    }
-  }, []);
+  const { screen, color_mode } = useMainContext();
 
   useEffect(() => {
     if (p5Container.current && !p5Instance.current) {
-      // Mount sketch
       p5Instance.current = new p5(
-        (p) => Stars(p, window.innerWidth, window.innerHeight),
+        (p) =>
+          color_mode === "dark"
+            ? Stars(p, window.innerWidth, window.innerHeight)
+            : Grid_Wave(p, window.innerWidth, window.innerHeight),
         p5Container.current
       );
     }
@@ -40,61 +36,57 @@ export const Introduction = () => {
         p5Instance.current = null;
       }
     };
-  }, [canvasHeight]);
+  }, [screen.width, screen.height, color_mode]);
 
-  useEffect(() => {
-    if (p5Instance.current) {
-      if (inView) {
-        p5Instance.current.loop();
-      } else {
-        p5Instance.current.noLoop();
-      }
-    }
-  }, [inView]);
+  const iconLibraries = {
+    Fa: FaIcons,
+    Io: IoIcons,
+    Si: SiIcons,
+    Md: MdIcons,
+  };
 
-  const links = [];
-  Links.forEach((link) => {
-    links.push(
-      <a
-        className="hero-link"
-        key={link.name}
-        href={link.link}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <button className="hero-button">{link.name}</button>
-      </a>
-    );
-  });
+  function getIconComponent(iconName) {
+    const prefix = iconName.slice(0, 2); // e.g. "Fa" from "FaLinkedin"
+    const library = iconLibraries[prefix];
+    return library ? library[iconName] : null;
+  }
 
   return (
-    <hero className="hero" id="home" ref={heroRef}>
-      <div
-        className="hero-header"
-        ref={(node) => {
-          inViewRef(node); // hook ref
-          p5Container.current = node; // p5 canvas target
-        }}
-      >
-        <p ref={textRef} className="hero-text border-bottom">
-          Welcome
-        </p>
-        <div className="hero-content">
-          <div className="hero-left">
-            <div className="hero-info">
-              <div className="hero-side-buttons">
-                {links}
-                <ColorMode />
-              </div>
-            </div>
+    <div className="hero" id="home">
+      <div className="hero-content grid">
+        <div
+          className="p5-wrapper"
+          ref={(node) => {
+            p5Container.current = node; // p5 canvas target
+          }}
+        />
+        <div className="left-sidebar">
+          <div className="hero-buttons">
+            {Links.map((link) => {
+              const Icon = getIconComponent(link.image);
+
+              return (
+                <a
+                  className="hero-link"
+                  key={link.name}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <button className="hero-button">
+                    {Icon ? <Icon size={40} /> : link.name}
+                  </button>
+                </a>
+              );
+            })}
+            <ColorMode />
           </div>
-          <div className="hero-center">
-            <Splash />
-          </div>
-          <div className="hero-right"></div>
         </div>
-        <div className="p5-wrapper" />
+        <div className="center">
+          <Splash />
+        </div>
+        <div className="right-sidebar"></div>
       </div>
-    </hero>
+    </div>
   );
 };

@@ -1,12 +1,22 @@
 [
   {
     "name": "Linkedin",
-    "link": "https://www.linkedin.com/in/gian-marco-alagna/"
+    "link": "https://www.linkedin.com/in/gian-marco-alagna/",
+    "image": "FaLinkedin"
   },
-  { "name": "Github", "link": "https://github.com/GianMarcoAlagna" },
-  { "name": "P5.JS", "link": "https://editor.p5js.org/Ocramium/sketches" },
+  {
+    "name": "Github",
+    "link": "https://github.com/GianMarcoAlagna",
+    "image": "IoLogoGithub"
+  },
+  {
+    "name": "P5.JS",
+    "link": "https://editor.p5js.org/Ocramium/sketches",
+    "image": "SiP5Dotjs"
+  },
   {
     "name": "Resume",
-    "link": "https://drive.google.com/file/d/1YIdPdhpWz30tunZMgOjHShHoA4Bj8qry/view?usp=sharing"
+    "link": "https://drive.google.com/file/d/1YIdPdhpWz30tunZMgOjHShHoA4Bj8qry/view?usp=sharing",
+    "image": "MdContactPage"
   }
 ]

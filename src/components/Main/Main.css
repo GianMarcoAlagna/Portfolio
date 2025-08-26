@@ -4,12 +4,95 @@ main {
   flex-direction: column;
   background-color: var(--bg-color);
   min-height: 100vh;
-  perspective: 2000px; /* gives the 3D depth */
-  transform-origin: left center;
-  transform-style: preserve-3d;
-  transform: rotateY(0deg);
   transition: transform 1s ease-in-out;
-  /* animation: flip-over 1s ease-in-out; */
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  padding: 0.5rem;
+  grid-template-columns: 1fr 3fr 1fr; /* Example: left column, empty center, right column */
+  grid-template-rows: 1fr 3fr 1fr; /* Example: top row, empty center, bottom row */
+  width: 100%;
+  height: 100vh; /* Make the grid span the full viewport height */
+  transition: all 0.3s ease;
+  .header {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
+  }
+
+  .left-sidebar {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    min-width: 6rem;
+    transition: all 0.3s ease;
+  }
+
+  .right-sidebar {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+    min-width: 6rem;
+  }
+
+  .center {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+  .footer {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 3;
+  }
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+
+    .header {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 1;
+    }
+    .left-sidebar {
+      grid-column: 1 / span 3;
+      grid-row: 3 / span 3;
+
+      .hero-buttons {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+      }
+    }
+
+    .right-sidebar {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .center {
+      grid-column: 1 / span 3;
+      grid-row: 2 / span 1;
+    }
+  }
+}
+
+.hero-header {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  font-size: 2rem;
+  height: fit-content;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgb(var(--bg-color-rgb), 0.35);
+  animation: reveal-down 1s ease;
+  z-index: 999;
+}
+
+.hero-header-text {
+  width: fit-content;
+  margin: 0;
 }
 
 @keyframes flip-over {
