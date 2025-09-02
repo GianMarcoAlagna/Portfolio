@@ -7,92 +7,32 @@ main {
   transition: transform 1s ease-in-out;
 }
 
-.grid {
-  display: grid;
-  align-items: center;
-  padding: 0.5rem;
-  grid-template-columns: 1fr 3fr 1fr; /* Example: left column, empty center, right column */
-  grid-template-rows: 1fr 3fr 1fr; /* Example: top row, empty center, bottom row */
-  width: 100%;
-  height: 100vh; /* Make the grid span the full viewport height */
-  transition: all 0.3s ease;
-  .header {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 3;
-  }
-
-  .left-sidebar {
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 1;
-    min-width: 6rem;
-    transition: all 0.3s ease;
-  }
-
-  .right-sidebar {
-    grid-row: 2 / span 1;
-    grid-column: 3 / span 1;
-    min-width: 6rem;
-  }
-
-  .center {
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 1;
-  }
-
-  .footer {
-    grid-row: 3 / span 1;
-    grid-column: 1 / span 3;
-  }
-
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
-
-    .header {
-      grid-column: 1 / span 3;
-      grid-row: 1 / span 1;
-    }
-    .left-sidebar {
-      grid-column: 1 / span 3;
-      grid-row: 3 / span 3;
-
-      .hero-buttons {
-        justify-content: center;
-        flex-direction: row;
-        align-items: center;
-        margin: 0 auto;
-      }
-    }
-
-    .right-sidebar {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-    }
-
-    .center {
-      grid-column: 1 / span 3;
-      grid-row: 2 / span 1;
-    }
-  }
-}
-
 .hero-header {
+  display: flex;
   text-align: center;
   margin: 0;
   padding: 1rem;
-  position: absolute;
+  position: relative;
   font-size: 2rem;
-  height: fit-content;
+  height: 4rem;
   width: 100%;
   backdrop-filter: blur(10px);
   background-color: rgb(var(--bg-color-rgb), 0.35);
   animation: reveal-down 1s ease;
+  align-items: center;
   z-index: 999;
 }
 
 .hero-header-text {
+  position: fixed;
   width: fit-content;
-  margin: 0;
+  font-size: 2rem;
+  left: 50%;
+  translate: -50%;
+
+  @media screen and (max-width: 400px) {
+    font-size: 1rem;
+  }
 }
 
 @keyframes flip-over {
@@ -130,10 +70,4 @@ main {
 .constrain {
   max-width: 100%;
   width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  main {
-    display: flex;
-  }
 }

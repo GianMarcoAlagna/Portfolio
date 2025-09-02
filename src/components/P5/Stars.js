@@ -170,21 +170,21 @@ function Stars(p, w, h) {
     }
 
     // draw planets
-    drawRadialGradient(
-      Sun.x,
-      Sun.y,
-      p.color(Sun.color1),
-      p.color(Sun.color2),
-      Sun.radius
-    );
-    drawRadialGradient(
-      Moon.x,
-      Moon.y,
-      p.color(Moon.color1),
-      p.color(Moon.color2),
-      Moon.radius
-    );
-    drawEarth(Earth, Earth.x, Earth.y);
+    // drawRadialGradient(
+    //   Sun.x,
+    //   Sun.y,
+    //   p.color(Sun.color1),
+    //   p.color(Sun.color2),
+    //   Sun.radius
+    // );
+    // drawRadialGradient(
+    //   Moon.x,
+    //   Moon.y,
+    //   p.color(Moon.color1),
+    //   p.color(Moon.color2),
+    //   Moon.radius
+    // );
+    // drawEarth(Earth, Earth.x, Earth.y);
   }
 
   function makeStar() {
