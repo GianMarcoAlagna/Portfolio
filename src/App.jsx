@@ -51,7 +51,7 @@ function App() {
       <MainProvider>
         <Preloader loading={loading}>
           <Main cursorFallback={fallback} />
-          <div className="cursor" ref={cursorRef} />
+          {!fallback && <div className="cursor" ref={cursorRef} />}
         </Preloader>
       </MainProvider>
     </>
