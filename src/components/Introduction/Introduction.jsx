@@ -59,9 +59,9 @@ export const Introduction = () => {
         <h1 className="hero-content-title">
           <Reveal>Gian-Marco</Reveal>
         </h1>
-        <p className="hero-content-descriptor">
+        <div className="hero-content-descriptor">
           <Typed>Software Developer</Typed>
-        </p>
+        </div>
 
         {/* Hero buttons */}
         <div className="hero-buttons">

@@ -5,6 +5,31 @@ main {
   background-color: var(--bg-color);
   min-height: 100vh;
   transition: transform 1s ease-in-out;
+
+  /* whenever a button or anchor tag is hovered, the cursor style is mutated */
+  &:has(button:hover, a:hover) + .cursor {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.hide-cursor * {
+    cursor: none !important;
+  }
+}
+
+.cursor {
+  position: absolute;
+  background-image: radial-gradient(
+    oklch(100% 0.00011 271.152 / 0.2),
+    oklch(100% 0.00011 271.152 / 0.2),
+    oklch(60% 0.18582 251.743),
+    oklch(65% 0.18582 251.743)
+  );
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 999;
+  pointer-events: none;
 }
 
 .hero-header {

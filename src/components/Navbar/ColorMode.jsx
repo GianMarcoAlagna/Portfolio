@@ -5,7 +5,6 @@ import "./ColorMode.css";
 
 export const ColorMode = () => {
   const { color_mode: colorMode, setColorMode } = useMainContext();
-  console.log(colorMode);
   function onChange() {
     if (colorMode === "light") {
       localStorage.setItem("color-mode", "dark");

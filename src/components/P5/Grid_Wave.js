@@ -5,7 +5,7 @@ export default function gridWave(p, w, h) {
 
   const squareRadius = 100;
   const influenceRadius = 300; // how far mouse influence reaches
-  const minScale = 1.5; // max enlargement
+  const minScale = 1.5;
   let squares = [];
 
   for (let i = -squareRadius; i <= w; i += squareRadius) {

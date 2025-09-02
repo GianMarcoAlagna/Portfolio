@@ -1,9 +1,10 @@
 import { Introduction } from "../Introduction/Introduction";
 import "./Main.css";
 
-export const Main = () => {
+export const Main = ({ cursorFallback }) => {
   return (
-    <main className="main">
+    //! Implement cursor with svg within /public, make cursor: none; in CSS
+    <main className={`main${!cursorFallback ? " hide-cursor" : ""}`}>
       <Introduction />
     </main>
   );

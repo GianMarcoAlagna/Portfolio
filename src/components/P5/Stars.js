@@ -1,5 +1,4 @@
 function Stars(p, w, h) {
-  // console.log("Stars initialized with size:", w, h);
   const respawnDelay = 60;
   // ==== STAR CLASS ====
   class Star {
