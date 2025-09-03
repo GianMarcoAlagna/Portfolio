@@ -6,32 +6,48 @@
 }
 
 .text-outline {
-  /* Comment out line 18 if you want the outline */
   display: none;
   position: absolute;
   color: transparent;
   -webkit-text-stroke: 1px white;
 }
 
-.text-fill {
+.text-fill.smooth {
   overflow: hidden;
   animation: width var(--duration) ease-in-out;
   animation-fill-mode: both;
   animation-delay: var(--animation-delay);
+
+  &::after {
+    content: "";
+    height: 0.1rem;
+    background-color: var(--primary-color);
+    position: absolute;
+    display: block;
+    width: 1ch;
+    animation: blink 1s linear infinite alternate,
+      position var(--duration) ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: var(--animation-delay);
+    bottom: 0;
+  }
 }
 
-.text-fill::after {
-  content: "";
-  height: 0.1rem;
-  background-color: var(--primary-color);
-  position: absolute;
-  display: block;
-  width: 25px;
-  animation: blink 1s linear infinite alternate,
-    position var(--duration) ease-in-out;
-  animation-fill-mode: both;
-  animation-delay: var(--animation-delay);
-  bottom: 0;
+.text-fill {
+  overflow: hidden;
+  &::after {
+    content: "";
+    height: 2ch;
+    /* background-color: oklch(0.9081 0.145 190.04); */
+    background-color: oklch(70% 0.19981 255.155);
+    position: absolute;
+    animation: blink 1s linear infinite alternate;
+    display: block;
+    width: 0.1ch;
+    right: -0.1ch;
+    bottom: 0;
+    box-shadow: 0 0 5px 1px oklch(0 0 0);
+  }
 }
 
 @keyframes width {

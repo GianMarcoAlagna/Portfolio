@@ -12,16 +12,31 @@ function App() {
   function onMouseMove(evt) {
     if (!cursorRef.current) return;
 
-    const x = evt.clientX;
-    const y = evt.clientY;
+    const cursorSize = 24; // assuming 10px (5px offset each side)
+    const halfSize = cursorSize / 2;
 
-    cursorRef.current.style.top = y - 5 + "px";
-    cursorRef.current.style.left = x - 5 + "px";
+    let x = evt.clientX - halfSize;
+    let y = evt.clientY - halfSize;
+
+    const maxX = window.innerWidth - cursorSize;
+    const maxY = window.innerHeight - cursorSize;
+
+    x = Math.max(0, Math.min(x, maxX));
+    y = Math.max(0, Math.min(y, maxY));
+
+    cursorRef.current.style.top = `${y}px`;
+    cursorRef.current.style.left = `${x}px`;
   }
 
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
+      if (matchMedia("(pointer:fine)").matches) {
+        setFallback(false);
+      } else {
+        setFallback(true);
+      }
+
       if (!fallback) {
         cursor();
       }

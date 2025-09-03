@@ -1,36 +1,29 @@
-import Links from "../Util/Links.json";
-import * as FaIcons from "react-icons/fa";
-import * as IoIcons from "react-icons/io5";
-import * as SiIcons from "react-icons/si";
-import * as MdIcons from "react-icons/md";
-import gridWave from "../P5/Grid_Wave";
-import p5 from "p5";
 import { IoIosArrowDown } from "react-icons/io";
 import { useMainContext } from "../../context/MainContext";
+import { useEffect, useRef, useState } from "react";
+
+import { AnimatedPages } from "./Page.jsx";
+import { usePage } from "./usePage.js";
+
+import p5 from "p5";
+import gridWave from "../P5/Grid_Wave";
 
 import "./Introduction.css";
-import { useEffect, useRef, useState } from "react";
-import { Reveal } from "../../effects/Reveal/Reveal";
-import Typed from "../../effects/Typed/Typed";
 
 export const Introduction = () => {
+  const firstLoad = useRef(true);
   const bgContainer = useRef(null);
   const sketch = useRef(null);
   const [isModalsOpen, setIsModalsOpen] = useState(false);
+  const { activePage, setActivePage } = usePage();
   const { screen } = useMainContext();
-  const iconLibraries = { Fa: FaIcons, Io: IoIcons, Si: SiIcons, Md: MdIcons };
-
-  function getIconComponent(iconName) {
-    const prefix = iconName.slice(0, 2);
-    const library = iconLibraries[prefix];
-    return library ? library[iconName] : null;
-  }
 
   function setModal() {
     setIsModalsOpen((prev) => !prev);
   }
 
   useEffect(() => {
+    firstLoad.current = false;
     if (bgContainer && bgContainer.current) {
       sketch.current = new p5((p) => {
         gridWave(p, screen.width, screen.height);
@@ -38,6 +31,7 @@ export const Introduction = () => {
     }
     return () => {
       if (sketch.current) {
+        firstLoad.current = true;
         sketch.current.remove();
         sketch.current = null;
       }
@@ -46,7 +40,20 @@ export const Introduction = () => {
 
   return (
     <div className="hero">
-      {/* Background placeholder */}
+      <svg
+        width="0"
+        height="0"
+        style={{ position: "absolute" }}
+        aria-hidden="true"
+        focusable="false"
+      >
+        <defs>
+          <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="oklch(70% 0.20 255)" />
+            <stop offset="100%" stopColor="oklch(60% 0.20 245)" />
+          </linearGradient>
+        </defs>
+      </svg>
       <div
         className="background-placeholder"
         ref={(node) => {
@@ -55,45 +62,36 @@ export const Introduction = () => {
       ></div>
 
       {/* Central content */}
-      <div className="hero-content">
-        <h1 className="hero-content-title">
-          <Reveal>Gian-Marco</Reveal>
-        </h1>
-        <div className="hero-content-descriptor">
-          <Typed>Software Developer</Typed>
-        </div>
+      <AnimatedPages page={activePage} firstLoad={firstLoad} />
 
-        {/* Hero buttons */}
-        <div className="hero-buttons">
-          {Links.map((link) => {
-            const Icon = getIconComponent(link.image);
-            return (
-              <button key={link.name} className="hero-button">
-                <a
-                  className="hero-button-link"
-                  href={link.link}
-                  target="_blank"
-                  referrerPolicy="no-referrer"
-                ></a>
-                {Icon ? <Icon size={24} /> : link.name}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Placeholder modals */}
+      {/* modals */}
       <div className={`modals${isModalsOpen ? " open" : " closed"}`}>
-        <div className={`modals-toggle${isModalsOpen ? " up" : ""}`}>
+        <div className={`modals-toggle clickable${isModalsOpen ? " up" : ""}`}>
           <div className="modals-toggle-arrows" onClick={setModal}>
             <IoIosArrowDown size={50} />
             <IoIosArrowDown size={50} />
             <IoIosArrowDown size={50} />
           </div>
         </div>
-        <div className="modal">About Me</div>
-        <div className="modal">Projects</div>
-        <div className="modal">Contact</div>
+
+        <button
+          className={`modal${activePage === "About" ? " modal-active" : ""}`}
+          onClick={() => setActivePage("About")}
+        >
+          About Me
+        </button>
+        <button
+          className={`modal${activePage === "Projects" ? " modal-active" : ""}`}
+          onClick={() => setActivePage("Projects")}
+        >
+          Projects
+        </button>
+        <button
+          className={`modal${activePage === "Contact" ? " modal-active" : ""}`}
+          onClick={() => setActivePage("Contact")}
+        >
+          Contact
+        </button>
       </div>
     </div>
   );
