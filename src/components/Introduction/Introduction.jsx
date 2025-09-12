@@ -14,6 +14,7 @@ export const Introduction = () => {
   const firstLoad = useRef(true);
   const bgContainer = useRef(null);
   const sketch = useRef(null);
+
   const [isModalsOpen, setIsModalsOpen] = useState(false);
   const { activePage, setActivePage } = usePage();
   const { screen } = useMainContext();
@@ -74,24 +75,30 @@ export const Introduction = () => {
           </div>
         </div>
 
-        <button
-          className={`modal${activePage === "About" ? " modal-active" : ""}`}
-          onClick={() => setActivePage("About")}
-        >
-          About Me
-        </button>
-        <button
-          className={`modal${activePage === "Projects" ? " modal-active" : ""}`}
-          onClick={() => setActivePage("Projects")}
-        >
-          Projects
-        </button>
-        <button
-          className={`modal${activePage === "Contact" ? " modal-active" : ""}`}
-          onClick={() => setActivePage("Contact")}
-        >
-          Contact
-        </button>
+        <div className="modals-buttons">
+          <button
+            className={`modal${activePage === "About" ? " modal-active" : ""}`}
+            onClick={() => setActivePage("About")}
+          >
+            About Me
+          </button>
+          <button
+            className={`modal${
+              activePage === "Projects" ? " modal-active" : ""
+            }`}
+            onClick={() => setActivePage("Projects")}
+          >
+            Projects
+          </button>
+          <button
+            className={`modal${
+              activePage === "Contact" ? " modal-active" : ""
+            }`}
+            onClick={() => setActivePage("Contact")}
+          >
+            Contact
+          </button>
+        </div>
       </div>
     </div>
   );

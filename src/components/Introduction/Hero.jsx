@@ -6,6 +6,8 @@ import Links from "../Util/Links.json";
 import Typed from "../../effects/Typed/Typed";
 import { Reveal } from "../../effects/Reveal/Reveal";
 
+import "./Hero.css";
+
 export const Hero = ({ isActive }) => {
   const iconLibraries = {
     Fa: FaIcons,
@@ -28,7 +30,7 @@ export const Hero = ({ isActive }) => {
             Gian<span style={dashStyle}>-</span>Marco
           </Reveal>
         </h1>
-        <div className="hero-content-descriptor">
+        <div className="hero-content-descriptor impression">
           <Typed smooth={false}>Software Developer</Typed>
         </div>
 

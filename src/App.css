@@ -73,35 +73,9 @@
   }
 }
 
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes reveal-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.impression {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75) inset;
+  background: rgba(17, 17, 17, 0.75);
 }
 
 .reveal {

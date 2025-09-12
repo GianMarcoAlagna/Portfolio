@@ -10,10 +10,10 @@ main {
   &:has(button:hover, a:hover, .clickable:hover) + .cursor {
     transform: scale(1.5);
   }
+}
 
-  &.hide-cursor * {
-    cursor: none !important;
-  }
+.main.hide-cursor * {
+  cursor: none !important;
 }
 
 .cursor {
@@ -81,16 +81,6 @@ main {
 
   @media screen and (max-width: 400px) {
     font-size: 1rem;
-  }
-}
-
-@keyframes flip-over {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateY(90deg);
   }
 }
 

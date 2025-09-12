@@ -3,6 +3,7 @@ import { MainProvider } from "./context/MainContext";
 import { Main } from "./components";
 import { Preloader } from "./components/Preloader/Preloader";
 import "./App.css";
+import "./Animations.css";
 
 function App() {
   const [loading, setLoading] = useState(true);

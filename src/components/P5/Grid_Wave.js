@@ -39,7 +39,7 @@ export default function gridWave(p, w, h) {
       p.push();
       p.translate(s.i + squareRadius / 2, s.j + squareRadius / 2);
       p.scale(scaleFactor);
-      p.square(-squareRadius / 2, -squareRadius / 2, squareRadius / 2);
+      p.square(-squareRadius / 2.5, -squareRadius / 2.5, squareRadius / 2);
       p.pop();
     }
   }
